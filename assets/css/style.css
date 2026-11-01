@@ -90,6 +90,16 @@ body {
   position: relative;
 }
 
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
 /* Subtle Engineering Grid Overlay */
 body::before {
   content: "";
@@ -300,7 +310,7 @@ h3 {
 /* ==========================================================================
    Pills & Glowing Status Badges
    ========================================================================== */
-.status-pill {
+.status-pill, .hero-status-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -376,13 +386,13 @@ h3 {
 /* ==========================================================================
    Modern Buttons (Glow, Glass, Ghost)
    ========================================================================== */
-.btn-glow {
+.btn-glow, .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: #ffffff;
+  color: #ffffff !important;
   padding: 0.75rem 1.65rem;
   border-radius: 10px;
   font-weight: 600;
@@ -394,20 +404,21 @@ h3 {
   cursor: pointer;
 }
 
-.btn-glow:hover {
+.btn-glow:hover, .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(16, 185, 129, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  color: #ffffff;
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
-.btn-glass {
+.btn-glass, .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   background: var(--tag-bg);
   backdrop-filter: blur(12px);
-  color: var(--text-color);
+  color: var(--text-color) !important;
   padding: 0.75rem 1.5rem;
   border-radius: 10px;
   font-weight: 600;
@@ -419,10 +430,13 @@ h3 {
   cursor: pointer;
 }
 
-.btn-glass:hover {
+.btn-glass:hover, .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: var(--accent-color);
-  color: var(--text-color);
+  color: var(--text-color) !important;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
   transform: translateY(-2px);
 }
 
@@ -437,7 +451,7 @@ h3 {
   font-family: var(--font-sans);
   text-decoration: none;
   background: var(--tag-bg);
-  color: var(--text-color);
+  color: var(--text-color) !important;
   border: 1px solid var(--card-border);
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -445,8 +459,9 @@ h3 {
 
 .btn-card:hover {
   background: var(--text-color);
-  color: var(--bg-color);
+  color: var(--bg-color) !important;
   border-color: var(--text-color);
+  text-decoration: none;
 }
 
 .btn-sm {
@@ -492,27 +507,62 @@ h3 {
   margin: 2.5rem 0;
 }
 
-.bento-col-12 { grid-column: span 12; }
-.bento-col-8  { grid-column: span 8; }
-.bento-col-7  { grid-column: span 7; }
-.bento-col-6  { grid-column: span 6; }
-.bento-col-5  { grid-column: span 5; }
-.bento-col-4  { grid-column: span 4; }
+.bento-grid > * {
+  grid-column: span 4;
+}
+
+.bento-col-12 { grid-column: span 12 !important; }
+.bento-col-8  { grid-column: span 8 !important; }
+.bento-col-7  { grid-column: span 7 !important; }
+.bento-col-6  { grid-column: span 6 !important; }
+.bento-col-5  { grid-column: span 5 !important; }
+.bento-col-4  { grid-column: span 4 !important; }
+
+.bento-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow), var(--card-inner-glow);
+  border-radius: 16px;
+  padding: 1.75rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.bento-card:hover {
+  border-color: var(--card-border-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow), 0 0 30px -10px var(--accent-glow);
+}
 
 @media (max-width: 900px) {
-  .bento-col-8, .bento-col-7, .bento-col-6, .bento-col-5, .bento-col-4 {
-    grid-column: span 12;
+  .bento-grid > * {
+    grid-column: span 12 !important;
   }
 }
 
 /* ==========================================================================
    Engineering Telemetry Metrics Strip
    ========================================================================== */
-.metrics-strip {
+.metrics-strip, .hero-metrics {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
   margin: 3rem 0;
+}
+
+@media (max-width: 992px) {
+  .metrics-strip, .hero-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .metrics-strip, .hero-metrics {
+    grid-template-columns: 1fr;
+  }
 }
 
 .metric-card {

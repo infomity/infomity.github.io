@@ -47,10 +47,10 @@
   <script>
     (function() {
       const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      if (savedTheme === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
       }
     })();
   </script>
@@ -167,3 +167,4 @@
 
 </body>
 </html>
+
