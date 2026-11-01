@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangla Keyboard — High-Performance Offline Bengali IME | Infomity</title>
+  <meta name="description" content="An ultra-lightweight, 100% offline Bangla phonetic keyboard for Android by Infomity. Zero telemetry, sub-15ms latency, AI4Bharat IndicCorp lexicon. Package: com.infomity.banglakeyboard.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bangla Keyboard — High-Performance Offline Bengali IME | Infomity">
+  <meta property="og:description" content="100% offline Bangla phonetic keyboard for Android. Zero telemetry, sub-15ms latency, AI4Bharat IndicCorp lexicon.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://infomity.github.io/bangla-keyboard/">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Floating Capsule Navbar -->
+  <header class="navbar-wrapper">
+    <div class="navbar-container">
+      <a href="../" class="navbar-brand">
+        <div class="app-icon" style="width: 38px; height: 38px; border-radius: 10px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; color: #10b981;">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="navbar-brand-text">
+          <span class="navbar-name" style="font-weight: 800; letter-spacing: -0.02em;">Infomity</span>
+          <span class="navbar-badge">STUDIO &bull; LABS</span>
+        </div>
+      </a>
+
+      <nav class="navbar-links">
+        <a href="../" class="nav-link">Home</a>
+        <a href="../#apps" class="nav-link">All Apps</a>
+        <a href="#demo" class="nav-link">Live Demo</a>
+        <a href="#setup" class="nav-link">Setup</a>
+        <a href="./privacy/" class="nav-link" style="color: #34d399; font-weight: 600;">Privacy Policy</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero Section -->
+    <div style="text-align: center; max-width: 860px; margin: 2rem auto 3.5rem auto;">
+      
+      <!-- Status Pill -->
+      <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="hero-status-pill">
+          <span class="status-dot"></span>
+          <span>v1.0.0 PRODUCTION READY &bull; ZERO NETWORK PERMISSIONS</span>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="hero-title" style="font-size: 3.2rem; margin-bottom: 1.25rem; letter-spacing: -0.035em;">
+        Bengali Input Engine Re-engineered for <br>
+        <span class="text-gradient">Speed &amp; Complete Privacy</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-lead" style="font-size: 1.2rem; max-width: 720px; margin: 0 auto 2.25rem auto;">
+        An ultra-lightweight, 100% offline Bangla phonetic keyboard for Android by Infomity. Powered by on-device AI4Bharat frequency ranking, sub-15ms input response, and guaranteed zero keystroke logging.
+      </p>
+
+      <!-- CTAs -->
+      <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem;">
+        <button class="btn-primary" onclick="showToast('Google Play Store Listing', 'Bangla Keyboard (com.infomity.banglakeyboard) is undergoing final store publishing verification. Direct install will be enabled shortly.')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 01-.61-1.614V3.428c0-.62.226-1.19.609-1.614zm11.605 11.608l2.259 2.258-12.02 6.94 9.761-9.198zm0-2.844L5.453 1.38l12.02 6.94-2.259 2.258zm1.436 1.422l3.414 1.972a1.88 1.88 0 010 3.256l-3.414 1.972-2.348-2.348 2.348-2.852z"/>
+          </svg>
+          <span>Download on Google Play</span>
+        </button>
+
+        <a href="#demo" class="btn-secondary">
+          <span>Try Interactive Simulation</span>
+          <span>↓</span>
+        </a>
+
+        <a href="./privacy/" class="btn-secondary" style="border-color: rgba(16, 185, 129, 0.35); color: #34d399;">
+          <span>Privacy Policy</span>
+        </a>
+      </div>
+
+      <!-- Metadata pills -->
+      <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem; font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">
+        <span>PACKAGE: com.infomity.banglakeyboard</span>
+        <span>&bull;</span>
+        <span>API: Android 8.0+ (API 26)</span>
+        <span>&bull;</span>
+        <span>CORE: Kotlin InputMethodService</span>
+      </div>
+    </div>
+
+    <!-- Interactive Phone & Keyboard Simulation Canvas -->
+    <div id="demo" style="position: relative; margin: 4rem 0 6rem 0;">
+      
+      <!-- Phone Mockup Container -->
+      <div class="phone-mockup-frame">
+        <div class="phone-screen">
+          
+          <!-- Screen Top Bar -->
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+            <span>09:41</span>
+            <span style="color: #34d399; font-weight: 700;">● 100% OFFLINE</span>
+            <span>5G 100%</span>
+          </div>
+
+          <!-- Chat / Output Simulation Area -->
+          <div class="chat-preview-area">
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-bottom: 1rem; font-family: var(--font-mono);">
+              LIVE PHONETIC PARSING SIMULATION
+            </div>
+
+            <div class="chat-bubble-user" id="chatOutput">
+              আমি বাংলায় গান গাই
+            </div>
+
+            <!-- Simulated Input Box -->
+            <div class="chat-input-sim">
+              <span id="liveInputText">ami banglay gan gai</span>
+              <span class="cursor-blink">|</span>
+            </div>
+          </div>
+
+          <!-- Keyboard Suggestion Bar -->
+          <div class="keyboard-suggestions-bar" id="suggestionBar">
+            <span class="suggestion-chip active" onclick="pickSuggestion('আমি')">আমি</span>
+            <span class="suggestion-chip" onclick="pickSuggestion('আমার')">আমার</span>
+            <span class="suggestion-chip" onclick="pickSuggestion('আমরা')">আমরা</span>
+            <span class="suggestion-chip" onclick="pickSuggestion('আজ')">আজ</span>
+            <span class="suggestion-chip" onclick="pickSuggestion('আছে')">আছে</span>
+          </div>
+
+          <!-- Virtual Keyboard Layout -->
+          <div class="virtual-keyboard">
+            <!-- Row 1 -->
+            <div class="kb-row">
+              <div class="kb-key" onclick="pressKey('ক')">ক</div>
+              <div class="kb-key" onclick="pressKey('খ')">খ</div>
+              <div class="kb-key" onclick="pressKey('গ')">গ</div>
+              <div class="kb-key" onclick="pressKey('ঘ')">ঘ</div>
+              <div class="kb-key" onclick="pressKey('ঙ')">ঙ</div>
+              <div class="kb-key" onclick="pressKey('চ')">চ</div>
+              <div class="kb-key" onclick="pressKey('ছ')">ছ</div>
+              <div class="kb-key" onclick="pressKey('জ')">জ</div>
+              <div class="kb-key" onclick="pressKey('ঝ')">ঝ</div>
+              <div class="kb-key" onclick="pressKey('ঞ')">ঞ</div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="kb-row">
+              <div class="kb-key" onclick="pressKey('ট')">ট</div>
+              <div class="kb-key" onclick="pressKey('ঠ')">ঠ</div>
+              <div class="kb-key" onclick="pressKey('ড')">ড</div>
+              <div class="kb-key" onclick="pressKey('ঢ')">ঢ</div>
+              <div class="kb-key" onclick="pressKey('ণ')">ণ</div>
+              <div class="kb-key" onclick="pressKey('ত')">ত</div>
+              <div class="kb-key" onclick="pressKey('থ')">থ</div>
+              <div class="kb-key" onclick="pressKey('দ')">দ</div>
+              <div class="kb-key" onclick="pressKey('ধ')">ধ</div>
+              <div class="kb-key" onclick="pressKey('ন')">ন</div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="kb-row">
+              <div class="kb-key kb-key-fn" onclick="toggleLayout()">EN/বাং</div>
+              <div class="kb-key" onclick="pressKey('প')">প</div>
+              <div class="kb-key" onclick="pressKey('ফ')">ফ</div>
+              <div class="kb-key" onclick="pressKey('ব')">ব</div>
+              <div class="kb-key" onclick="pressKey('ভ')">ভ</div>
+              <div class="kb-key" onclick="pressKey('ম')">ম</div>
+              <div class="kb-key" onclick="pressKey('য')">য</div>
+              <div class="kb-key" onclick="pressKey('র')">র</div>
+              <div class="kb-key" onclick="pressKey('ল')">ল</div>
+              <div class="kb-key kb-key-fn" onclick="deleteChar()">⌫</div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="kb-row">
+              <div class="kb-key kb-key-fn">?123</div>
+              <div class="kb-key" onclick="pressKey('।')">।</div>
+              <div class="kb-key kb-spacebar" onclick="pressSpace()">Space (Phonetic)</div>
+              <div class="kb-key" onclick="pressKey('?')">?</div>
+              <div class="kb-key kb-key-accent" onclick="pressEnter()">↵</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Engineering Telemetry Metrics Strip -->
+    <div class="metrics-strip">
+      <div class="metric-card">
+        <div class="metric-label">Network Traffic</div>
+        <div class="metric-value">0 KB</div>
+        <p class="metric-desc">Zero <code>android.permission.INTERNET</code>. The app is technically incapable of sending data off your device.</p>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Inference Latency</div>
+        <div class="metric-value">&lt; 15ms</div>
+        <p class="metric-desc">Sub-frame phonetic parsing &amp; disambiguation running strictly in on-device memory.</p>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Bundled Lexicon</div>
+        <div class="metric-value">45,000+</div>
+        <p class="metric-desc">Derived from openly licensed (CC0) AI4Bharat IndicCorp v2 frequency rankings.</p>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Telemetry &amp; Ads</div>
+        <div class="metric-value">0%</div>
+        <p class="metric-desc">Zero advertising SDKs, tracking pixels, or third-party analytics libraries.</p>
+      </div>
+    </div>
+
+    <!-- Bento Grid Architecture & Capabilities -->
+    <div style="margin-top: 5rem;">
+      <div class="section-header" style="text-align: center; justify-content: center; flex-direction: column;">
+        <span class="badge-accent">CORE ARCHITECTURE</span>
+        <h2 style="font-size: 2.2rem; font-weight: 800; margin-top: 0.5rem; letter-spacing: -0.02em;">Engineered for Precision &amp; Speed</h2>
+        <p style="color: var(--text-secondary); max-width: 650px; margin: 0.5rem auto 0 auto; font-size: 1.05rem;">
+          Every layer of Bangla Keyboard was built from scratch in Kotlin using native Android InputMethodService standards.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+
+        <!-- Bento 1 (Large 8-col): Phonetic Engine -->
+        <div class="bento-card bento-col-8" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); display: flex; align-items: center; justify-content: center; color: #34d399; font-size: 1.25rem;">
+                  ⚡
+                </div>
+                <div>
+                  <h3 style="margin: 0; font-size: 1.25rem;">Smart Phonetic Disambiguation</h3>
+                  <span style="font-size: 0.8rem; color: var(--accent-color); font-family: var(--font-mono);">N-GRAM FREQUENCY LOOKUP</span>
+                </div>
+              </div>
+              <span class="badge-status badge-status-release">Real-Time</span>
+            </div>
+
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+              Type intuitively using plain lowercase English letters. Ambiguous spellings like <code>acho</code> are dynamically disambiguated to <strong>আছো</strong> using precompiled statistical word frequencies, eliminating tedious candidate picking.
+            </p>
+          </div>
+
+          <!-- Code / Mapping Flow Visual -->
+          <div style="background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: 0.85rem; margin-top: 1.5rem;">
+            <div style="color: var(--text-muted); margin-bottom: 0.5rem;">// Real-time phonetics resolver pipeline</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+              <span style="color: #94a3b8;">Input: "kemon acho"</span>
+              <span style="color: var(--accent-color);">&mdash;&gt; Tokenizer &mdash;&gt; Lexicon Rank &mdash;&gt;</span>
+              <span style="color: #34d399; font-weight: bold;">"কেমন আছো"</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 2 (4-col): Privacy Sandbox -->
+        <div class="bento-card bento-col-4">
+          <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.3); display: flex; align-items: center; justify-content: center; color: #22d3ee; font-size: 1.25rem; margin-bottom: 1.25rem;">
+            🔒
+          </div>
+          <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">Air-Gapped Sandbox</h3>
+          <span style="font-size: 0.8rem; color: #22d3ee; font-family: var(--font-mono); display: block; margin-bottom: 1rem;">MANIFEST-LEVEL ISOLATION</span>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
+            The app does not request or possess network sockets. Typing keystrokes, personal communications, and passwords never leave volatile device memory.
+          </p>
+        </div>
+
+        <!-- Bento 3 (4-col): Sensitive Field Guard -->
+        <div class="bento-card bento-col-4">
+          <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); display: flex; align-items: center; justify-content: center; color: #fbbf24; font-size: 1.25rem; margin-bottom: 1.25rem;">
+            🛡️
+          </div>
+          <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">Password Auto-Shield</h3>
+          <span style="font-size: 0.8rem; color: #fbbf24; font-family: var(--font-mono); display: block; margin-bottom: 1rem;">CONTEXT-AWARE LAYOUT</span>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
+            Detects password, email, and URL input fields automatically, switching instantly to English QWERTY and suppressing suggestion memory for maximum safety.
+          </p>
+        </div>
+
+        <!-- Bento 4 (4-col): AI4Bharat Lexicon -->
+        <div class="bento-card bento-col-4">
+          <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); display: flex; align-items: center; justify-content: center; color: #c084fc; font-size: 1.25rem; margin-bottom: 1.25rem;">
+            📚
+          </div>
+          <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">AI4Bharat Lexicon</h3>
+          <span style="font-size: 0.8rem; color: #c084fc; font-family: var(--font-mono); display: block; margin-bottom: 1rem;">INDICCORP V2 CORPUS</span>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
+            Derived from the peer-reviewed AI4Bharat Bengali corpus. 45,000+ statistical word counts are compressed directly into the binary package.
+          </p>
+        </div>
+
+        <!-- Bento 5 (4-col): Adaptive Theming -->
+        <div class="bento-card bento-col-4">
+          <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(236, 72, 153, 0.15); border: 1px solid rgba(236, 72, 153, 0.3); display: flex; align-items: center; justify-content: center; color: #f472b6; font-size: 1.25rem; margin-bottom: 1.25rem;">
+            🎨
+          </div>
+          <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">Adaptive Dynamic Theming</h3>
+          <span style="font-size: 0.8rem; color: #f472b6; font-family: var(--font-mono); display: block; margin-bottom: 1rem;">MATERIAL YOU COLOR MATCH</span>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
+            Harmonizes automatically with Android wallpaper palettes, offering true AMOLED pure black, haptic vibration customizer, and adjustable keyboard sizing.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Step-by-Step Setup Guide -->
+    <div id="setup" style="margin-top: 6rem;">
+      <div class="section-header" style="text-align: center; justify-content: center; flex-direction: column;">
+        <span class="badge-accent">INSTALLATION GUIDE</span>
+        <h2 style="font-size: 2.2rem; font-weight: 800; margin-top: 0.5rem; letter-spacing: -0.02em;">Fast 60-Second Setup</h2>
+        <p style="color: var(--text-secondary); max-width: 650px; margin: 0.5rem auto 0 auto; font-size: 1.05rem;">
+          Get up and running on any Android device running Android 8.0 (API 26) or higher.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+        
+        <div class="app-card" style="padding: 1.75rem;">
+          <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-color); font-family: var(--font-mono); margin-bottom: 0.75rem;">
+            01
+          </div>
+          <h4 style="margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--text-color);">Download App</h4>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0; line-height: 1.6;">
+            Install from the Google Play Store or download the verified release APK directly onto your phone.
+          </p>
+        </div>
+
+        <div class="app-card" style="padding: 1.75rem;">
+          <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-color); font-family: var(--font-mono); margin-bottom: 0.75rem;">
+            02
+          </div>
+          <h4 style="margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--text-color);">Enable Keyboard</h4>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0; line-height: 1.6;">
+            Navigate to <strong>Settings &rarr; System &rarr; Languages &amp; Input &rarr; Manage keyboards</strong> and toggle <strong>Bangla Keyboard</strong> on.
+          </p>
+        </div>
+
+        <div class="app-card" style="padding: 1.75rem;">
+          <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-color); font-family: var(--font-mono); margin-bottom: 0.75rem;">
+            03
+          </div>
+          <h4 style="margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--text-color);">Select as Active</h4>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0; line-height: 1.6;">
+            Tap on any text message box, tap the small keyboard icon in the bottom navigation bar, and select <strong>Bangla Keyboard</strong>.
+          </p>
+        </div>
+
+        <div class="app-card" style="padding: 1.75rem;">
+          <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-color); font-family: var(--font-mono); margin-bottom: 0.75rem;">
+            04
+          </div>
+          <h4 style="margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--text-color);">Type Naturally</h4>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0; line-height: 1.6;">
+            Type in lowercase English phonetics and watch suggestions appear instantly with zero input lag.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Privacy & Store Compliance Card -->
+    <div style="margin-top: 5rem;">
+      <div class="app-card" style="border-left: 4px solid var(--accent-color); padding: 2.25rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.25rem;">
+          <div>
+            <h3 style="margin: 0 0 0.35rem 0; font-size: 1.4rem; color: var(--text-color);">Official Privacy Disclosure &amp; Store Compliance</h3>
+            <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">
+              Compliant with Google Play Developer Policies, User Data Guidelines, and COPPA standards.
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="./privacy/" class="btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">
+              Read Full Privacy Policy &rarr;
+            </a>
+            <a href="./privacy/privacy.txt" class="btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">
+              Raw Plain Text
+            </a>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1.5rem; border-top: 1px solid var(--card-border); padding-top: 1.5rem; font-size: 0.88rem; color: var(--text-secondary);">
+          <div><strong style="color: var(--text-color);">No Keystroke Tracking:</strong> Keystrokes are processed solely in volatile RAM and never written to disk.</div>
+          <div><strong style="color: var(--text-color);">No Analytics SDKs:</strong> Zero Firebase, Facebook, or third-party telemetry libraries.</div>
+          <div><strong style="color: var(--text-color);">No Cloud Backups:</strong> Android automatic cloud data backup is explicitly disabled.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frequently Asked Questions -->
+    <div style="margin-top: 5rem; margin-bottom: 3rem;">
+      <div class="section-header" style="text-align: center; justify-content: center; flex-direction: column;">
+        <span class="badge-accent">KNOWLEDGE BASE</span>
+        <h2 style="font-size: 2.2rem; font-weight: 800; margin-top: 0.5rem; letter-spacing: -0.02em;">Frequently Asked Questions</h2>
+        <p style="color: var(--text-secondary); max-width: 650px; margin: 0.5rem auto 0 auto; font-size: 1.05rem;">
+          Everything you need to know about installation, privacy, and Google Play integration.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+        
+        <div class="app-card" style="padding: 1.75rem;">
+          <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Why does Android show a warning when enabling the keyboard?</h4>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
+            Android displays a standard alert (<em>"This input method may be able to collect all text you type..."</em>) for <strong>every</strong> newly enabled third-party keyboard. Bangla Keyboard has no internet permission in its manifest and is technically incapable of sending data anywhere.
+          </p>
+        </div>
+
+        <div class="app-card" style="padding: 1.75rem;">
+          <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Can this page be used as the App Website URL on Google Play Console?</h4>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
+            Yes! This URL (<code>https://infomity.github.io/bangla-keyboard/</code>) satisfies Google Play requirements for the <strong>App Website &amp; Support URL</strong>, matching the app package <code>com.infomity.banglakeyboard</code>, and links directly to the standalone <strong>Privacy Policy</strong>.
+          </p>
+        </div>
+
+        <div class="app-card" style="padding: 1.75rem;">
+          <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">How do I switch quickly between Bangla and English?</h4>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
+            Tap the <code>EN/বাং</code> language button or swipe across the spacebar to switch fluidly between English QWERTY and phonetic Bengali.
+          </p>
+        </div>
+
+        <div class="app-card" style="padding: 1.75rem;">
+          <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">How can I report feedback or request new vocabulary?</h4>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
+            You can reach out directly to the studio via <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color);">GitHub</a> or email us at <code>contact@infomity.com</code> / <code>hissain.khan@gmail.com</code>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Modern Engineering Footer -->
+  <footer style="margin-top: 6rem; border-top: 1px solid var(--card-border); padding: 3rem 1.5rem 4rem 1.5rem; background: var(--paper-bg);">
+    <div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem;">
+      <div style="display: flex; align-items: center; gap: 0.85rem;">
+        <div class="app-icon" style="width: 34px; height: 34px; border-radius: 8px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; color: #10b981;">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div>
+          <span style="font-weight: 800; font-size: 0.95rem; color: var(--text-color); display: block; line-height: 1.2;">Infomity</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">&copy; 2026 Infomity. Open-Access Software.</span>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: 0.85rem; color: var(--text-secondary);">
+        <a href="../" style="color: var(--text-secondary); text-decoration: none;">Studio Home</a>
+        <a href="../#apps" style="color: var(--text-secondary); text-decoration: none;">Apps Catalog</a>
+        <a href="./privacy/" style="color: var(--accent-color); text-decoration: none;">App Privacy Policy</a>
+        <a href="./privacy/privacy.txt" style="color: var(--text-secondary); text-decoration: none;">Raw Policy</a>
+        <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: none;">GitHub Org</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sleek Notification Toast -->
+  <div id="toastNotification" style="position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(100px); background: #0f1422; color: #f8fafc; border: 1px solid var(--accent-color); padding: 1rem 1.5rem; border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(16, 185, 129, 0.3); z-index: 1000; max-width: 90vw; width: 440px; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease; opacity: 0; pointer-events: none;">
+    <div style="display: flex; align-items: flex-start; gap: 0.85rem;">
+      <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(16, 185, 129, 0.2); display: flex; align-items: center; justify-content: center; color: #34d399; font-size: 1rem; flex-shrink: 0;">✓</div>
+      <div style="flex: 1;">
+        <div id="toastTitleText" style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.2rem; color: #ffffff;">Status</div>
+        <div id="toastMessageText" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4;">Notification details.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+
+    // Simulation Interactive Logic
+    let currentText = "ami banglay gan gai";
+    let currentOutput = "আমি বাংলায় গান গাই";
+
+    function pickSuggestion(word) {
+      const chatOutput = document.getElementById('chatOutput');
+      if (chatOutput) {
+        chatOutput.textContent = currentOutput + " " + word;
+        currentOutput = chatOutput.textContent;
+      }
+      showToast('Applied Suggestion', 'Selected: "' + word + '" from local vocabulary.');
+    }
+
+    function pressKey(char) {
+      const liveInput = document.getElementById('liveInputText');
+      const chatOutput = document.getElementById('chatOutput');
+      if (liveInput && chatOutput) {
+        liveInput.textContent += char;
+        chatOutput.textContent += char;
+        currentOutput = chatOutput.textContent;
+      }
+    }
+
+    function pressSpace() {
+      const liveInput = document.getElementById('liveInputText');
+      const chatOutput = document.getElementById('chatOutput');
+      if (liveInput && chatOutput) {
+        liveInput.textContent += " ";
+        chatOutput.textContent += " ";
+        currentOutput = chatOutput.textContent;
+      }
+    }
+
+    function deleteChar() {
+      const liveInput = document.getElementById('liveInputText');
+      const chatOutput = document.getElementById('chatOutput');
+      if (liveInput && liveInput.textContent.length > 0) {
+        liveInput.textContent = liveInput.textContent.slice(0, -1);
+      }
+      if (chatOutput && chatOutput.textContent.length > 0) {
+        chatOutput.textContent = chatOutput.textContent.slice(0, -1);
+        currentOutput = chatOutput.textContent;
+      }
+    }
+
+    function pressEnter() {
+      showToast('Message Sent', 'Simulated message dispatched to chat.');
+    }
+
+    function toggleLayout() {
+      showToast('Layout Switched', 'Toggled between English QWERTY and Bangla Phonetic.');
+    }
+
+    // Toast System
+    let toastTimer = null;
+    function showToast(title, message) {
+      const toast = document.getElementById('toastNotification');
+      const titleEl = document.getElementById('toastTitleText');
+      const msgEl = document.getElementById('toastMessageText');
+
+      if (!toast) return;
+
+      titleEl.textContent = title || 'Notice';
+      msgEl.textContent = message || '';
+
+      toast.style.pointerEvents = 'auto';
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateX(-50%) translateY(0)';
+
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(100px)';
+        toast.style.pointerEvents = 'none';
+      }, 4500);
+    }
+  </script>
+
+</body>
+</html>

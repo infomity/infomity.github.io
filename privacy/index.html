@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Statement — Infomity Studio</title>
+  <meta name="description" content="Infomity Studio organizational privacy policy and zero-telemetry software commitment.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .doc-container {
+      max-width: 860px;
+      margin: 2rem auto 5rem auto;
+      padding: 0 1.25rem;
+    }
+    .doc-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 3.5rem 3rem;
+      box-shadow: var(--shadow);
+    }
+    .summary-callout {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-left: 4px solid var(--accent-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 768px) {
+      .doc-card {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Floating Capsule Navbar -->
+  <header class="navbar-wrapper">
+    <div class="navbar-container">
+      <a href="../" class="navbar-brand">
+        <div class="app-icon" style="width: 38px; height: 38px; border-radius: 10px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; color: #10b981;">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="navbar-brand-text">
+          <span class="navbar-name" style="font-weight: 800; letter-spacing: -0.02em;">Infomity</span>
+          <span class="navbar-badge">STUDIO &bull; LABS</span>
+        </div>
+      </a>
+
+      <nav class="navbar-links">
+        <a href="../" class="nav-link">Home</a>
+        <a href="../#apps" class="nav-link">Apps</a>
+        <a href="../bangla-keyboard/" class="nav-link">Bangla Keyboard</a>
+        <a href="../bangla-keyboard/privacy/" class="nav-link">Keyboard Privacy</a>
+        <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          🌓
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="doc-container">
+    <article class="doc-card">
+      <div class="status-badge" style="margin-bottom: 0.5rem;">
+        <span class="status-dot"></span>
+        ORGANIZATIONAL PRIVACY CHARTER
+      </div>
+      <h1 style="font-size: 2.4rem; font-weight: 800; margin: 0.5rem 0 1rem 0; letter-spacing: -0.02em;">Infomity Studio Privacy Policy</h1>
+      <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7;">
+        Last Updated: November 1, 2026 &bull; Published by Infomity
+      </p>
+
+      <div class="summary-callout">
+        <h3 style="margin: 0 0 0.5rem 0; color: var(--accent-color); font-size: 1.15rem;">Our Core Privacy Philosophy</h3>
+        <p style="margin: 0; color: var(--text-color); font-size: 0.95rem; line-height: 1.6;">
+          At <strong>Infomity</strong>, privacy is not a compliance checkbox; it is the fundamental architectural constraint of everything we engineer. We build applications and developer tools that run entirely on the user's hardware with <strong>zero telemetry, zero background trackers, and zero server-side surveillance</strong>.
+        </p>
+      </div>
+
+      <h2 style="font-size: 1.35rem; font-weight: 700; margin-top: 2rem; color: var(--text-color);">1. Zero Data Harvesting</h2>
+      <p style="color: var(--text-secondary); line-height: 1.7;">
+        Infomity does not sell, rent, monetize, or broker user information. Our software products (including mobile applications, system utilities, and open-source repositories) operate strictly without user telemetry, device profiling, advertising networks, or third-party behavioral analytics.
+      </p>
+
+      <h2 style="font-size: 1.35rem; font-weight: 700; margin-top: 2rem; color: var(--text-color);">2. Application-Specific Privacy Disclosures</h2>
+      <p style="color: var(--text-secondary); line-height: 1.7;">
+        For disclosures relating to specific mobile applications published on the Google Play Store or elsewhere:
+      </p>
+      <ul style="color: var(--text-secondary); line-height: 1.8;">
+        <li>
+          <strong>Bangla Keyboard (com.infomity.banglakeyboard):</strong> View the complete <a href="../bangla-keyboard/privacy/" style="color: var(--accent-color); font-weight: 600;">Bangla Keyboard Privacy Policy</a> or read the <a href="../bangla-keyboard/privacy/privacy.txt" target="_blank" style="color: var(--accent-color);">Raw Plain Text Policy</a>.
+        </li>
+      </ul>
+
+      <h2 style="font-size: 1.35rem; font-weight: 700; margin-top: 2rem; color: var(--text-color);">3. Open-Source Transparency</h2>
+      <p style="color: var(--text-secondary); line-height: 1.7;">
+        Our public software codebases and technical specifications are published on GitHub for peer inspection and independent verification. You can audit our repositories at <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color);">github.com/infomity</a>.
+      </p>
+
+      <h2 style="font-size: 1.35rem; font-weight: 700; margin-top: 2rem; color: var(--text-color);">4. Publisher Contact Information</h2>
+      <p style="color: var(--text-secondary); line-height: 1.7;">
+        For privacy questions, verification audits, or legal inquiries, contact:
+      </p>
+      <ul style="color: var(--text-secondary); line-height: 1.8;">
+        <li><strong>Organization:</strong> Infomity</li>
+        <li><strong>Lead Developer:</strong> Md. Sazzad Hissain Khan</li>
+        <li><strong>Email:</strong> <a href="mailto:contact@infomity.com" style="color: var(--accent-color);">contact@infomity.com</a> / <a href="mailto:hissain.khan@gmail.com" style="color: var(--accent-color);">hissain.khan@gmail.com</a></li>
+        <li><strong>Website:</strong> <a href="https://infomity.github.io/" style="color: var(--accent-color);">https://infomity.github.io/</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <!-- Modern Engineering Footer -->
+  <footer style="margin-top: 4rem; border-top: 1px solid var(--card-border); padding: 2.5rem 1.5rem; background: var(--paper-bg);">
+    <div style="max-width: 860px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
+      <div>&copy; 2026 Infomity. All rights reserved.</div>
+      <div style="display: flex; gap: 1.25rem;">
+        <a href="../" style="color: var(--text-secondary); text-decoration: none;">Studio Home</a>
+        <a href="../bangla-keyboard/" style="color: var(--text-secondary); text-decoration: none;">Bangla Keyboard</a>
+        <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: none;">GitHub Org</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+  </script>
+
+</body>
+</html>

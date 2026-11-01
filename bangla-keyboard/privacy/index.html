@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Bangla Keyboard | Infomity</title>
+  <meta name="description" content="Official Privacy Policy and Data Safety Disclosure for Bangla Keyboard (com.infomity.banglakeyboard) for Android by Infomity.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Dark-first obsidian luxury palette (ZeBeyond Design System) */
+      --bg-color: #07090e;
+      --bg-gradient: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 60%),
+                     radial-gradient(circle at 100% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
+                     radial-gradient(circle at 0% 50%, rgba(99, 102, 241, 0.04) 0%, transparent 40%);
+      --card-bg: rgba(15, 20, 31, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(16, 185, 129, 0.35);
+      --text-color: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-color: #10b981;
+      --accent-glow: rgba(16, 185, 129, 0.25);
+      --tag-bg: rgba(255, 255, 255, 0.04);
+      --tag-border: rgba(255, 255, 255, 0.08);
+      --navbar-bg: rgba(10, 13, 20, 0.8);
+      --navbar-border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+      --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+    }
+
+    [data-theme="light"] {
+      --bg-color: #f8fafc;
+      --bg-gradient: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.05) 0%, transparent 60%),
+                     radial-gradient(circle at 100% 20%, rgba(6, 182, 212, 0.04) 0%, transparent 50%);
+      --card-bg: rgba(255, 255, 255, 0.9);
+      --card-border: rgba(226, 232, 240, 0.9);
+      --card-border-hover: rgba(16, 185, 129, 0.5);
+      --text-color: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --accent-color: #059669;
+      --accent-glow: rgba(5, 150, 105, 0.15);
+      --tag-bg: #f1f5f9;
+      --tag-border: #e2e8f0;
+      --navbar-bg: rgba(255, 255, 255, 0.85);
+      --navbar-border: rgba(226, 232, 240, 0.9);
+      --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      background-image: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-color);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    [data-theme="light"] body::before {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+    }
+
+    /* Floating Top Bar */
+    .topbar-wrapper {
+      position: sticky;
+      top: 1rem;
+      z-index: 100;
+      max-width: 860px;
+      margin: 1rem auto 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .topbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--navbar-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--navbar-border);
+      border-radius: 9999px;
+      padding: 0.6rem 1.25rem;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-nav:hover {
+      color: var(--text-color);
+      background: var(--tag-bg);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--accent-color);
+      box-shadow: 0 0 8px var(--accent-color);
+    }
+
+    .theme-toggle-btn {
+      background: var(--tag-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-color);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--accent-color);
+      transform: rotate(15deg);
+    }
+
+    /* Document Container */
+    .doc-container {
+      max-width: 860px;
+      margin: 2rem auto 5rem auto;
+      padding: 0 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .doc-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 3.5rem 3rem;
+      box-shadow: var(--shadow);
+    }
+
+    .doc-header {
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin: 1rem 0 0.5rem 0;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    [data-theme="light"] .gradient-text {
+      background: linear-gradient(135deg, #0f172a 0%, #334155 70%, #059669 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .meta-tag {
+      font-size: 0.8rem;
+      background: var(--tag-bg);
+      border: 1px solid var(--card-border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+    }
+
+    .summary-callout {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-left: 4px solid var(--accent-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2.25rem 0;
+      box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.15);
+    }
+
+    .summary-callout h3 {
+      margin: 0 0 0.5rem 0;
+      color: var(--accent-color);
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .summary-item {
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .summary-item strong {
+      color: var(--text-color);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem 0;
+      color: var(--text-color);
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 0.5rem;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin: 0 0 1.25rem 0;
+      line-height: 1.75;
+    }
+
+    ul {
+      color: var(--text-secondary);
+      padding-left: 1.5rem;
+      margin: 0 0 1.5rem 0;
+      line-height: 1.8;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      color: var(--text-color);
+    }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.88em;
+      background: var(--tag-bg);
+      border: 1px solid var(--card-border);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      color: #34d399;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .doc-footer {
+      border-top: 1px solid var(--card-border);
+      padding-top: 2rem;
+      margin-top: 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .doc-card {
+        padding: 2rem 1.5rem;
+      }
+      h1 {
+        font-size: 1.85rem;
+      }
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Minimal Floating Navigation Bar -->
+  <header class="topbar-wrapper">
+    <div class="topbar-container">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <a href="../../" class="btn-nav">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Infomity Studio</span>
+        </a>
+        <span style="color: var(--text-muted);">&bull;</span>
+        <a href="../" class="btn-nav">
+          <span>Bangla Keyboard</span>
+        </a>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>Zero-Telemetry Certified</span>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          🌓
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Document Container -->
+  <main class="doc-container">
+    <article class="doc-card">
+
+      <header class="doc-header">
+        <div class="status-badge" style="margin-bottom: 0.5rem;">
+          <span class="status-dot"></span>
+          OFFICIAL PRIVACY POLICY &bull; GOOGLE PLAY COMPLIANT
+        </div>
+        <h1 class="gradient-text">Privacy Policy &amp; Data Safety</h1>
+        <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">
+          Comprehensive data safety disclosure for the <strong>Bangla Keyboard</strong> Android application published by <strong>Infomity</strong>.
+        </p>
+
+        <div class="meta-tags">
+          <span class="meta-tag"><strong>Package:</strong> com.infomity.banglakeyboard</span>
+          <span class="meta-tag"><strong>Publisher:</strong> Infomity</span>
+          <span class="meta-tag"><strong>Effective Date:</strong> November 1, 2026</span>
+          <span class="meta-tag"><strong>Target API:</strong> Android 8.0+ (API 26+)</span>
+        </div>
+      </header>
+
+      <!-- Executive Summary Box -->
+      <section class="summary-callout">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          Executive Summary: Zero Data Collection Guarantee
+        </h3>
+        <p style="margin-bottom: 0.5rem; font-size: 0.92rem; color: var(--text-color);">
+          Bangla Keyboard is built from the ground up as a <strong>strictly offline, zero-telemetry</strong> tool. The application is architecturally designed without network socket access:
+        </p>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <strong>🚫 Zero Network Permissions</strong>
+            <code>android.permission.INTERNET</code> is not requested in <code>AndroidManifest.xml</code>. The OS prevents any network sockets.
+          </div>
+          <div class="summary-item">
+            <strong>🔒 No Keystroke Logging</strong>
+            What you type is processed in volatile memory for rendering and immediately discarded. Never saved to persistent disk.
+          </div>
+          <div class="summary-item">
+            <strong>📦 100% Offline Vocabulary</strong>
+            All 45,000+ words and n-gram suggestions are pre-packaged directly inside the application binary.
+          </div>
+          <div class="summary-item">
+            <strong>🛡️ Zero Third-Party Trackers</strong>
+            No Google Analytics, Firebase, Facebook SDK, crash reporters, or advertising frameworks are bundled.
+          </div>
+        </div>
+      </section>
+
+      <!-- Detailed Sections -->
+      <h2>1. Information We Do Not Collect</h2>
+      <p>
+        Unlike many modern keyboards that transmit user telemetry to remote cloud servers for analysis, <strong>Bangla Keyboard does not collect, record, transmit, share, or sell any personal information or usage statistics</strong>. Specifically:
+      </p>
+      <ul>
+        <li><strong>Keystroke &amp; Input Text:</strong> We do not log, store, or monitor any text, passwords, credit card numbers, personal communications, or search queries you type.</li>
+        <li><strong>Personal Identifiers:</strong> We do not collect names, email addresses, phone numbers, contacts, device identifiers (IMEI, Android ID, MAC address), or IP addresses.</li>
+        <li><strong>Location Data:</strong> The application does not request or access GPS, coarse location, or cell-tower data.</li>
+        <li><strong>Usage Analytics:</strong> We do not collect behavioral telemetry, session duration, keypress counts, or feature interaction metrics.</li>
+      </ul>
+
+      <h2>2. Device Permissions Declaration</h2>
+      <p>
+        To ensure complete auditability, the application requests <strong>only the minimum system permissions</strong> required to operate as an Android Input Method Editor (IME):
+      </p>
+      <ul>
+        <li><code>android.permission.VIBRATE</code> — <em>(Optional)</em> Used exclusively to provide haptic tactile feedback when physical key touches occur. This is managed locally by Android's <code>Vibrator</code> service.</li>
+        <li><code>android.permission.WAKE_LOCK</code> — <em>(System standard)</em> Handled by the Android OS framework to keep the keyboard UI responsive during active typing.</li>
+      </ul>
+      <p>
+        <strong>Network Permission Absence:</strong> Neither <code>android.permission.INTERNET</code> nor <code>android.permission.ACCESS_NETWORK_STATE</code> is present in our manifest. As a result, the Android operating system enforces a strict sandbox boundary that physically prevents the app from creating network sockets, DNS queries, or background web requests.
+      </p>
+
+      <h2>3. How Typing &amp; Phonetic Suggestions Work</h2>
+      <p>
+        Bangla Keyboard operates using an on-device rule-based phonetic engine and an offline statistical frequency lexicon:
+      </p>
+      <ul>
+        <li><strong>Ephemeral RAM Processing:</strong> When you press keys (e.g. <code>a</code>-<code>m</code>-<code>i</code>), the characters are processed in local volatile RAM by the <code>InputMethodService</code> to compute candidate Bengali matches (<code>আমি</code>, <code>আমরা</code>).</li>
+        <li><strong>Offline Pre-compiled Dictionary:</strong> Word suggestions are drawn from an internal static database derived from the CC0-licensed <strong>AI4Bharat IndicCorp v2</strong> corpus. No queries leave your phone.</li>
+        <li><strong>Automatic Discard:</strong> Once a word is committed to your active text field, intermediate buffer state is cleared from memory.</li>
+      </ul>
+
+      <h2>4. Sensitive Field Protection (Passwords &amp; PINs)</h2>
+      <p>
+        Bangla Keyboard inspects Android's <code>EditorInfo</code> flags passed by the calling application:
+      </p>
+      <ul>
+        <li>When an input field is marked as <code>TYPE_TEXT_VARIATION_PASSWORD</code>, <code>TYPE_TEXT_VARIATION_VISIBLE_PASSWORD</code>, or <code>TYPE_NUMBER_VARIATION_PASSWORD</code>, the keyboard immediately switches to standard numeric/QWERTY mode.</li>
+        <li>Suggestion caching and custom dictionary recording are completely disabled during password entry.</li>
+      </ul>
+
+      <h2>5. Third-Party Services and SDKs</h2>
+      <p>
+        Bangla Keyboard is built without third-party closed-source SDKs. We do not integrate:
+      </p>
+      <ul>
+        <li>Advertising networks (Google AdMob, Unity Ads, AppLovin, etc.)</li>
+        <li>Analytics frameworks (Google Firebase Analytics, Mixpanel, AppsFlyer, Segment, etc.)</li>
+        <li>Cloud crash reporting tools that scrape logcat (Crashlytics, Sentry, Bugsnag)</li>
+      </ul>
+
+      <h2>6. Children's Online Privacy Protection (COPPA &amp; GDPR-K)</h2>
+      <p>
+        Because Bangla Keyboard does not collect or transmit personal information of any kind from any user, it fully complies with the <strong>Children's Online Privacy Protection Act (COPPA)</strong> and the <strong>EU General Data Protection Regulation (GDPR / GDPR-K)</strong>. The application is completely safe for users of all ages, including children under 13.
+      </p>
+
+      <h2>7. Dataset Attribution</h2>
+      <p>
+        The phonetic dictionary rankings bundled within the APK utilize public lexical frequency counts from the <strong>AI4Bharat IndicCorp</strong> project developed by IIT Madras, licensed under CC0 / permissive open licenses. We thank the researchers for advancing open Indian language technologies.
+      </p>
+
+      <h2>8. Verification &amp; Security Auditing</h2>
+      <p>
+        Any security researcher, developer, or user can independently verify these privacy guarantees:
+      </p>
+      <ul>
+        <li><strong>APK Decompilation:</strong> Decompile the release APK using <code>jadx</code> or <code>apktool</code> and inspect <code>AndroidManifest.xml</code> to confirm the complete absence of <code>INTERNET</code> permissions.</li>
+        <li><strong>Network Monitoring:</strong> Inspect active network connections using tools like <em>PCAPdroid</em>, <em>Wireshark</em>, or Android Studio Network Profiler — zero packets are dispatched.</li>
+      </ul>
+
+      <h2>9. Policy Updates</h2>
+      <p>
+        We may occasionally update this Privacy Policy to reflect app enhancements or changes in Google Play Developer Policies. Any revisions will be published immediately at this URL with an updated "Effective Date".
+      </p>
+
+      <h2>10. Developer Contact &amp; Inquiries</h2>
+      <p>
+        If you have any questions, suggestions, or concerns regarding this Privacy Policy or the security of Bangla Keyboard, please contact the publisher directly:
+      </p>
+      <ul>
+        <li><strong>Publisher:</strong> Infomity</li>
+        <li><strong>Lead Developer:</strong> Md. Sazzad Hissain Khan</li>
+        <li><strong>Email:</strong> <a href="mailto:contact@infomity.com">contact@infomity.com</a> / <a href="mailto:hissain.khan@gmail.com">hissain.khan@gmail.com</a></li>
+        <li><strong>Organization GitHub:</strong> <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer">https://github.com/infomity</a></li>
+        <li><strong>Website:</strong> <a href="https://infomity.github.io/">https://infomity.github.io/</a></li>
+      </ul>
+
+      <footer class="doc-footer">
+        <div>
+          &copy; 2026 Infomity. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="./privacy.txt" target="_blank">Raw Plain Text Policy</a>
+          <a href="../../">Infomity Studio</a>
+          <a href="../">Bangla Keyboard App</a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+  </script>
+
+</body>
+</html>

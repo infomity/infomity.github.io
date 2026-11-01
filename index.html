@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infomity — Intelligent, Privacy-First Software & Edge Tools</title>
+  <meta name="description" content="Infomity is an independent software studio engineering intelligent, privacy-first mobile applications, developer tools, and edge-first software architectures.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Infomity — Intelligent, Privacy-First Software & Edge Tools">
+  <meta property="og:description" content="Engineering edge-first software and mobile applications with zero telemetry, on-device intelligence, and complete user sovereignty.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://infomity.github.io/">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Floating Capsule Navbar -->
+  <header class="navbar-wrapper">
+    <div class="navbar-container">
+      <a href="./" class="navbar-brand">
+        <div class="app-icon" style="width: 38px; height: 38px; border-radius: 10px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; color: #10b981;">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="navbar-brand-text">
+          <span class="navbar-name" style="font-weight: 800; letter-spacing: -0.02em;">Infomity</span>
+          <span class="navbar-badge">STUDIO &bull; LABS</span>
+        </div>
+      </a>
+
+      <nav class="navbar-links">
+        <a href="#apps" class="nav-link">Apps</a>
+        <a href="./bangla-keyboard/" class="nav-link">Bangla Keyboard</a>
+        <a href="#philosophy" class="nav-link">Philosophy</a>
+        <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+        <a href="./privacy/" class="nav-link">Privacy</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Executive Studio Hero -->
+    <section class="hero-section">
+      <div class="hero-status-pill">
+        <span class="status-dot"></span>
+        <span>INDEPENDENT SOFTWARE STUDIO &bull; OPEN ARCHITECTURE</span>
+      </div>
+
+      <h1 class="hero-title">
+        Intelligent, Privacy-First Software <br>
+        <span class="text-gradient">&amp; Edge-Native Tools.</span>
+      </h1>
+
+      <p class="hero-lead">
+        Infomity engineers modern mobile applications and system software designed with absolute user privacy, zero telemetry, and offline autonomy. No intrusive trackers, no background exfiltration, no opaque SDKs.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#apps" class="btn-primary">
+          <span>Explore Apps</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="./bangla-keyboard/" class="btn-secondary">
+          <span>Bangla Keyboard</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+            <line x1="6" y1="8" x2="6.01" y2="8"></line>
+            <line x1="10" y1="8" x2="10.01" y2="8"></line>
+            <line x1="14" y1="8" x2="14.01" y2="8"></line>
+            <line x1="18" y1="8" x2="18.01" y2="8"></line>
+          </svg>
+        </a>
+        <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <span>GitHub Organization</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Live Studio Metrics Strip -->
+      <div class="hero-metrics">
+        <div class="metric-card">
+          <div class="metric-value">0 KB</div>
+          <div class="metric-label">Network Exfiltration</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">100%</div>
+          <div class="metric-label">Offline Autonomy</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">0</div>
+          <div class="metric-label">Ad Trackers &amp; SDKs</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">&lt; 15ms</div>
+          <div class="metric-label">Edge Compute Latency</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Apps Catalog -->
+    <section id="apps" class="section-block" style="margin-top: 5rem;">
+      <div class="section-header">
+        <div>
+          <span class="badge-accent">PUBLISHED APPLICATIONS &amp; TOOLS</span>
+          <h2 style="font-size: 2rem; font-weight: 800; margin-top: 0.5rem; letter-spacing: -0.02em;">Software Catalog</h2>
+        </div>
+        <p style="color: var(--text-secondary); max-width: 480px; margin: 0; font-size: 0.95rem;">
+          Production releases engineered for zero network dependency, instant response times, and verifiable data isolation.
+        </p>
+      </div>
+
+      <div class="app-grid">
+
+        <!-- App 1: Bangla Keyboard -->
+        <div class="app-card">
+          <div class="app-top-meta">
+            <span class="app-category">ANDROID INPUT METHOD (IME)</span>
+            <span class="badge-status badge-status-release">
+              <span class="status-dot"></span>
+              STABLE v1.0
+            </span>
+          </div>
+
+          <div class="app-header-block">
+            <div class="app-icon" style="background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.35); color: #10b981;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                <line x1="6" y1="8" x2="6.01" y2="8"></line>
+                <line x1="10" y1="8" x2="10.01" y2="8"></line>
+                <line x1="14" y1="8" x2="14.01" y2="8"></line>
+                <line x1="18" y1="8" x2="18.01" y2="8"></line>
+                <line x1="8" y1="12" x2="8.01" y2="12"></line>
+                <line x1="12" y1="12" x2="12.01" y2="12"></line>
+                <line x1="16" y1="12" x2="16.01" y2="12"></line>
+                <line x1="7" y1="16" x2="17" y2="16"></line>
+              </svg>
+            </div>
+            <div class="app-title-area">
+              <h3>Bangla Keyboard</h3>
+              <span class="app-subtitle">com.infomity.banglakeyboard</span>
+            </div>
+          </div>
+
+          <p class="app-description">
+            High-performance Bengali phonetic and fixed layout keyboard for Android. Built with local offline n-gram suggestions, intelligent conjunct processing, and strict zero-telemetry architecture with zero network permissions.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tech-tag">Android</span>
+            <span class="tech-tag">Kotlin</span>
+            <span class="tech-tag">Offline AI</span>
+            <span class="tech-tag">Zero Permissions</span>
+            <span class="tech-tag">IME</span>
+          </div>
+
+          <div class="app-actions">
+            <a href="./bangla-keyboard/" class="btn-card btn-sm" style="flex: 1; text-align: center; justify-content: center; background: rgba(16, 185, 129, 0.12); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+              Explore Showcase
+            </a>
+            <a href="./bangla-keyboard/privacy/" class="btn-card btn-sm" style="text-align: center; justify-content: center;">
+              Privacy Policy
+            </a>
+          </div>
+        </div>
+
+        <!-- App 2: c-clean-codes -->
+        <div class="app-card">
+          <div class="app-top-meta">
+            <span class="app-category">SYSTEMS &amp; ALGORITHMS</span>
+            <span class="badge-status badge-status-source">
+              OPEN SOURCE
+            </span>
+          </div>
+
+          <div class="app-header-block">
+            <div class="app-icon" style="background: rgba(6, 182, 212, 0.12); border-color: rgba(6, 182, 212, 0.35); color: #06b6d4;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <div class="app-title-area">
+              <h3>c-clean-codes</h3>
+              <span class="app-subtitle">github.com/infomity/c-clean-codes</span>
+            </div>
+          </div>
+
+          <p class="app-description">
+            Production-grade, clean implementations of foundational data structures and standard utility algorithms in C. Emphasizes defensive programming, strict memory safety, and minimal instruction overhead.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tech-tag">C</span>
+            <span class="tech-tag">Data Structures</span>
+            <span class="tech-tag">Systems</span>
+            <span class="tech-tag">Algorithms</span>
+            <span class="tech-tag">MIT</span>
+          </div>
+
+          <div class="app-actions">
+            <a href="https://github.com/infomity/c-clean-codes" target="_blank" rel="noopener noreferrer" class="btn-card btn-sm" style="flex: 1; text-align: center; justify-content: center;">
+              View Repository
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- App 3: AndroidSemanticSearch (Labs) -->
+        <div class="app-card">
+          <div class="app-top-meta">
+            <span class="app-category">EDGE MACHINE LEARNING</span>
+            <span class="badge-status badge-status-source">
+              RESEARCH LABS
+            </span>
+          </div>
+
+          <div class="app-header-block">
+            <div class="app-icon" style="background: rgba(99, 102, 241, 0.12); border-color: rgba(99, 102, 241, 0.35); color: #6366f1;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <div class="app-title-area">
+              <h3>AndroidSemanticSearch</h3>
+              <span class="app-subtitle">Private On-Device Embeddings</span>
+            </div>
+          </div>
+
+          <p class="app-description">
+            On-device semantic retrieval pipeline running local vector embeddings natively inside Android without sending queries or document indices to third-party cloud servers.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tech-tag">On-Device AI</span>
+            <span class="tech-tag">Vector Search</span>
+            <span class="tech-tag">Quantization</span>
+            <span class="tech-tag">Privacy</span>
+          </div>
+
+          <div class="app-actions">
+            <a href="#philosophy" class="btn-card btn-sm" style="flex: 1; text-align: center; justify-content: center;">
+              Read Architecture
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Studio Philosophy Bento Grid -->
+    <section id="philosophy" class="section-block" style="margin-top: 6rem;">
+      <div class="section-header">
+        <div>
+          <span class="badge-accent">ENGINEERING PRINCIPLES</span>
+          <h2 style="font-size: 2rem; font-weight: 800; margin-top: 0.5rem; letter-spacing: -0.02em;">Our Studio Philosophy</h2>
+        </div>
+        <p style="color: var(--text-secondary); max-width: 480px; margin: 0; font-size: 0.95rem;">
+          How Infomity builds software that prioritizes user sovereignty above all else.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+
+        <div class="bento-card">
+          <div class="bento-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem; color: var(--text-color);">Zero-Telemetry by Design</h3>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
+            Our mobile tools, including Bangla Keyboard, omit the <code>android.permission.INTERNET</code> declaration entirely. Data cannot leave the device because the OS kernel itself forbids socket creation.
+          </p>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon" style="background: rgba(6, 182, 212, 0.1); color: #06b6d4; border: 1px solid rgba(6, 182, 212, 0.3); width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem; color: var(--text-color);">Sub-15ms Edge Execution</h3>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
+            We favor algorithmic compression and on-device data structures over remote cloud APIs. High-frequency n-grams and phonetic parsing execute directly in hardware memory for instantaneous user interaction.
+          </p>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon" style="background: rgba(99, 102, 241, 0.1); color: #6366f1; border: 1px solid rgba(99, 102, 241, 0.3); width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem; color: var(--text-color);">Radical Software Clarity</h3>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
+            Zero hidden advertising SDKs, zero crash trackers mining hardware IDs, and zero opaque monetization frameworks. Software should be light, predictable, and fully auditable by anyone.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modern Engineering Footer -->
+  <footer style="margin-top: 6rem; border-top: 1px solid var(--card-border); padding: 3rem 1.5rem 4rem 1.5rem; background: var(--paper-bg);">
+    <div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem;">
+      <div style="display: flex; align-items: center; gap: 0.85rem;">
+        <div class="app-icon" style="width: 34px; height: 34px; border-radius: 8px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; color: #10b981;">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div>
+          <span style="font-weight: 800; font-size: 0.95rem; color: var(--text-color); display: block; line-height: 1.2;">Infomity</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">&copy; 2026 Infomity. Open-Access Software.</span>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: 0.85rem; color: var(--text-secondary);">
+        <a href="./bangla-keyboard/" style="color: var(--text-secondary); text-decoration: none;">Bangla Keyboard</a>
+        <a href="./bangla-keyboard/privacy/" style="color: var(--text-secondary); text-decoration: none;">App Privacy Policy</a>
+        <a href="./privacy/" style="color: var(--text-secondary); text-decoration: none;">Studio Privacy</a>
+        <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: none;">GitHub Org</a>
+        <a href="https://hissain.github.io/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); text-decoration: none;">Architect Profile</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle handling
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+  </script>
+
+</body>
+</html>
