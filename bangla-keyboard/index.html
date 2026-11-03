@@ -63,6 +63,11 @@
         <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
           <span id="themeIcon">🌙</span>
         </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileMenu()">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
     </div>
   </header>
@@ -513,10 +518,10 @@
   </main>
 
   <!-- Modern Engineering Footer -->
-  <footer style="margin-top: 6rem; border-top: 1px solid var(--card-border); padding: 3rem 1.5rem 4rem 1.5rem; background: var(--paper-bg);">
-    <div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem;">
-      <div style="display: flex; align-items: center; gap: 0.85rem;">
-        <div class="app-icon" style="width: 34px; height: 34px; border-radius: 8px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35);">
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="app-icon" style="width: 36px; height: 36px; border-radius: 9px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); flex-shrink: 0;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; color: #10b981;">
             <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
             <polyline points="2 17 12 22 22 17"></polyline>
@@ -524,17 +529,17 @@
           </svg>
         </div>
         <div>
-          <span style="font-weight: 800; font-size: 0.95rem; color: var(--text-color); display: block; line-height: 1.2;">Infomity</span>
-          <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">&copy; 2026 Infomity. Open-Access Software.</span>
+          <span class="footer-brand-title">Infomity</span>
+          <span class="footer-brand-subtitle">&copy; 2026 Infomity. Open-Access Software.</span>
         </div>
       </div>
 
-      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: 0.85rem; color: var(--text-secondary);">
-        <a href="../" style="color: var(--text-secondary); text-decoration: none;">Studio Home</a>
-        <a href="../#apps" style="color: var(--text-secondary); text-decoration: none;">Apps Catalog</a>
-        <a href="./privacy/" style="color: var(--accent-color); text-decoration: none;">App Privacy Policy</a>
-        <a href="./privacy/privacy.txt" style="color: var(--text-secondary); text-decoration: none;">Raw Policy</a>
-        <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: none;">GitHub Org</a>
+      <div class="footer-links-grid">
+        <a href="../" class="footer-link">Studio Home</a>
+        <a href="../#apps" class="footer-link">Apps Catalog</a>
+        <a href="./privacy/" class="footer-link footer-link-highlight">App Privacy Policy</a>
+        <a href="./privacy/privacy.txt" class="footer-link">Raw Policy</a>
+        <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Org</a>
       </div>
     </div>
   </footer>
@@ -551,6 +556,35 @@
   </div>
 
   <script>
+    function toggleMobileMenu() {
+      const container = document.querySelector('.navbar-container');
+      const btn = document.getElementById('mobileMenuBtn');
+      if (!container) return;
+      const isOpen = container.classList.toggle('is-open');
+      if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    document.addEventListener('click', function(e) {
+      const container = document.querySelector('.navbar-container');
+      if (!container || !container.classList.contains('is-open')) return;
+      if (!container.contains(e.target)) {
+        container.classList.remove('is-open');
+        const btn = document.getElementById('mobileMenuBtn');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.querySelectorAll('.navbar-links .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const container = document.querySelector('.navbar-container');
+        if (container && container.classList.contains('is-open')) {
+          container.classList.remove('is-open');
+          const btn = document.getElementById('mobileMenuBtn');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
     // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
