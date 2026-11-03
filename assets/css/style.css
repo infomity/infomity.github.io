@@ -29,7 +29,7 @@
   --tag-bg: rgba(255, 255, 255, 0.04);
   --tag-border: rgba(255, 255, 255, 0.08);
   --tag-text: #cbd5e1;
-  --navbar-bg: rgba(10, 14, 23, 0.45);
+  --navbar-bg: rgba(10, 14, 23, 0.15);
   --navbar-border: rgba(255, 255, 255, 0.12);
   --navbar-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   --header-bg: transparent;
@@ -61,7 +61,7 @@
   --tag-bg: #f1f5f9;
   --tag-border: #e2e8f0;
   --tag-text: #334155;
-  --navbar-bg: rgba(255, 255, 255, 0.58);
+  --navbar-bg: rgba(255, 255, 255, 0.25);
   --navbar-border: rgba(226, 232, 240, 0.75);
   --navbar-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   --header-bg: transparent;
