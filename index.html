@@ -52,7 +52,7 @@
       </a>
 
       <nav class="navbar-links">
-        <a href="#apps" class="nav-link">Apps</a>
+        <a href="#apps" class="nav-link">Software</a>
         <a href="./bangla-keyboard/" class="nav-link">Bangla Keyboard</a>
         <a href="#philosophy" class="nav-link">Philosophy</a>
         <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
@@ -93,13 +93,13 @@
 
         <!-- Lead Description -->
         <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 2.25rem; max-width: 820px;">
-          Infomity engineers modern mobile applications and system software designed with absolute user privacy, zero telemetry, and offline autonomy. No intrusive trackers, no background exfiltration, no opaque SDKs.
+          Infomity engineers privacy-first mobile systems, AI developer tooling, scientific computing libraries, and high-performance edge architectures with zero telemetry, zero bloat, and complete user sovereignty.
         </p>
 
         <!-- Hero CTAs -->
         <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 3.5rem;">
           <a href="#apps" class="btn-glow">
-            <span>Explore Apps</span>
+            <span>Explore Catalog</span>
             <span>&darr;</span>
           </a>
           <a href="./bangla-keyboard/" class="btn-glass">
@@ -139,21 +139,34 @@
       </div>
     </section>
 
-    <!-- Studio Apps Catalog -->
+    <!-- Studio Software Catalog -->
     <section id="apps" style="margin-bottom: 5rem;">
-      <div style="display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
         <div>
-          <h2 style="margin: 0 0 0.25rem 0;">Software Catalog</h2>
+          <h2 style="margin: 0 0 0.25rem 0;">Software &amp; Systems Catalog</h2>
           <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">
-            Production releases engineered for zero network dependency, instant response times, and verifiable data isolation.
+            Production mobile systems, AI developer tools, scientific libraries, and threat intelligence platforms.
           </p>
         </div>
       </div>
 
-      <div class="app-grid">
+      <!-- Search & Filter Controls -->
+      <div class="card" style="margin-bottom: 2.25rem; padding: 1.25rem 1.5rem;">
+        <input type="text" id="catalogSearchInput" class="catalog-search-bar" placeholder="Search systems, tools, libraries, or tech stacks (e.g. Kotlin, Python, DSP, Cloudflare, Node)..." aria-label="Search software catalog">
 
-        <!-- App 1: Bangla Keyboard -->
-        <article class="app-card">
+        <div class="filter-tabs" style="margin: 0;">
+          <button class="filter-btn active" data-category="all">All Systems (7)</button>
+          <button class="filter-btn" data-category="devtools">Developer Tools &amp; AI (3)</button>
+          <button class="filter-btn" data-category="cloud">Cloud &amp; Security (1)</button>
+          <button class="filter-btn" data-category="dsp">Scientific &amp; DSP (1)</button>
+          <button class="filter-btn" data-category="mobile">Mobile Systems (2)</button>
+        </div>
+      </div>
+
+      <div class="app-grid" id="catalogGrid">
+
+        <!-- Project 1: Bangla Keyboard -->
+        <article class="app-card" data-category="mobile" data-keywords="android kotlin ime bangla bengali keyboard phonetic offline dictionary suggestions privacy zero permissions input">
           <div class="app-top-meta">
             <span class="app-category">ANDROID INPUT METHOD (IME)</span>
             <span class="badge-status badge-status-release">
@@ -204,49 +217,232 @@
           </div>
         </article>
 
-        <!-- App 2: c-clean-codes -->
-        <article class="app-card">
+        <!-- Project 2: jscipy -->
+        <article class="app-card" data-category="dsp" data-keywords="java android dsp signal processing scipy fft filters butterworth chebyshev bessel psd stft scientific math numerical integration">
           <div class="app-top-meta">
-            <span class="app-category">SYSTEMS &amp; ALGORITHMS</span>
-            <span class="badge-status badge-status-source">
-              OPEN SOURCE
+            <span class="app-category">SIGNAL PROCESSING &amp; SCIENTIFIC COMPUTING</span>
+            <span class="badge-status badge-status-release">
+              <span class="status-dot"></span>
+              ⭐ 26 STARS &bull; FLAGSHIP
+            </span>
+          </div>
+
+          <div class="app-header-block">
+            <div class="app-icon" style="background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.35); color: #10b981;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <div class="app-title-area">
+              <h3>jscipy</h3>
+              <span class="app-subtitle">github.com/infomity/jscipy</span>
+            </div>
+          </div>
+
+          <p class="app-description">
+            Comprehensive Java scientific computing and digital signal processing library inspired by SciPy. Provides dependency-free Butterworth, Chebyshev, and Bessel filters, real-time FFT, PSD, DCT, STFT, and Runge-Kutta numerical integration for JVM and Android.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">DSP</span>
+            <span class="tech-tag">FFT</span>
+            <span class="tech-tag">Filter Design</span>
+            <span class="tech-tag">Android</span>
+            <span class="tech-tag">SciPy-like</span>
+          </div>
+
+          <div class="app-actions">
+            <a href="https://github.com/infomity/jscipy" target="_blank" rel="noopener noreferrer" class="btn-glow btn-sm" style="flex: 1;">
+              View Repository &#8599;
+            </a>
+            <a href="https://hissain.github.io/jscipy/" target="_blank" rel="noopener noreferrer" class="btn-glass btn-sm">
+              Docs &#8599;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: cvealerts -->
+        <article class="app-card" data-category="cloud" data-keywords="cve security vulnerability cloudflare workers d1 email alerts epss cisa kev threat intelligence brevo javascript turnstile">
+          <div class="app-top-meta">
+            <span class="app-category">THREAT INTELLIGENCE &amp; EDGE CLOUD</span>
+            <span class="badge-status badge-status-live">
+              <span class="status-dot"></span>
+              LIVE PLATFORM
             </span>
           </div>
 
           <div class="app-header-block">
             <div class="app-icon" style="background: rgba(6, 182, 212, 0.12); border-color: rgba(6, 182, 212, 0.35); color: #06b6d4;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
             </div>
             <div class="app-title-area">
-              <h3>c-clean-codes</h3>
-              <span class="app-subtitle">github.com/infomity/c-clean-codes</span>
+              <h3>cvealerts</h3>
+              <span class="app-subtitle">cvealerts.infomity.workers.dev</span>
             </div>
           </div>
 
           <p class="app-description">
-            Production-grade, clean implementations of foundational data structures and standard utility algorithms in C. Emphasizes defensive programming, strict memory safety, and minimal instruction overhead.
+            Free, open-source vulnerability intelligence platform. Browse newly published CVEs with instant client-side filtering by CVSS severity, CISA KEV exploitation, and EPSS likelihood, backed by daily automated email digests deployed on Cloudflare Workers and D1.
           </p>
 
           <div class="tech-tags">
-            <span class="tech-tag">C</span>
-            <span class="tech-tag">Data Structures</span>
-            <span class="tech-tag">Systems</span>
-            <span class="tech-tag">Algorithms</span>
-            <span class="tech-tag">MIT</span>
+            <span class="tech-tag">Cloudflare Workers</span>
+            <span class="tech-tag">D1 SQL</span>
+            <span class="tech-tag">NVD API</span>
+            <span class="tech-tag">CISA KEV</span>
+            <span class="tech-tag">EPSS</span>
+            <span class="tech-tag">Turnstile</span>
           </div>
 
           <div class="app-actions">
-            <a href="https://github.com/infomity/c-clean-codes" target="_blank" rel="noopener noreferrer" class="btn-glass btn-sm" style="flex: 1;">
+            <a href="https://cvealerts.infomity.workers.dev" target="_blank" rel="noopener noreferrer" class="btn-glow btn-sm" style="flex: 1;">
+              Launch Live App &#8599;
+            </a>
+            <a href="https://github.com/infomity/cvealerts" target="_blank" rel="noopener noreferrer" class="btn-glass btn-sm">
+              Repository &#8599;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4: FreeModelsForClaude -->
+        <article class="app-card" data-category="devtools" data-keywords="nodejs proxy claude cli code cline openrouter ai swe failover free router token zero dependencies local supervisor">
+          <div class="app-top-meta">
+            <span class="app-category">AI DEVELOPER TOOLING</span>
+            <span class="badge-status badge-status-source">
+              OPEN SOURCE
+            </span>
+          </div>
+
+          <div class="app-header-block">
+            <div class="app-icon" style="background: rgba(99, 102, 241, 0.12); border-color: rgba(99, 102, 241, 0.35); color: #6366f1;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+            </div>
+            <div class="app-title-area">
+              <h3>FreeModelsForClaude</h3>
+              <span class="app-subtitle">github.com/infomity/FreeModelsForClaude</span>
+            </div>
+          </div>
+
+          <p class="app-description">
+            Zero-dependency Node.js proxy routing OpenAI and Anthropic Messages requests from Cline and Claude CLI to OpenRouter free models with auto-failover across 10+ models, SWE-benchmark prioritization, and Claude Code safety classifier bypass.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Claude Code</span>
+            <span class="tech-tag">Cline</span>
+            <span class="tech-tag">OpenRouter</span>
+            <span class="tech-tag">SWE-Bench</span>
+            <span class="tech-tag">Zero-Deps</span>
+          </div>
+
+          <div class="app-actions">
+            <a href="https://github.com/infomity/FreeModelsForClaude" target="_blank" rel="noopener noreferrer" class="btn-glass btn-sm" style="flex: 1;">
               View Repository &#8599;
             </a>
           </div>
         </article>
 
-        <!-- App 3: AndroidSemanticSearch (Labs) -->
-        <article class="app-card">
+        <!-- Project 5: gtalk -->
+        <article class="app-card" data-category="devtools" data-keywords="python pypi cli gtalk google ai mode terminal zero token headless chrome selenium beautifulsoup command line">
+          <div class="app-top-meta">
+            <span class="app-category">TERMINAL AI ASSISTANT</span>
+            <span class="badge-status badge-status-release">
+              PyPI PACKAGE
+            </span>
+          </div>
+
+          <div class="app-header-block">
+            <div class="app-icon" style="background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.35); color: #10b981;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+            </div>
+            <div class="app-title-area">
+              <h3>gtalk</h3>
+              <span class="app-subtitle">pip install gtalk</span>
+            </div>
+          </div>
+
+          <p class="app-description">
+            Command-line interface to interact with Google's AI Mode directly from your terminal with zero API tokens. Features persistent headless browser session reuse, context-aware interactive query chaining, formatted code blocks, and single-shot execution.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">PyPI</span>
+            <span class="tech-tag">CLI</span>
+            <span class="tech-tag">Google AI Mode</span>
+            <span class="tech-tag">Terminal</span>
+            <span class="tech-tag">Zero-Token</span>
+          </div>
+
+          <div class="app-actions">
+            <a href="https://github.com/infomity/gtalk" target="_blank" rel="noopener noreferrer" class="btn-glass btn-sm" style="flex: 1;">
+              View Repository &#8599;
+            </a>
+            <a href="https://pypi.org/project/gtalk/" target="_blank" rel="noopener noreferrer" class="btn-glass btn-sm">
+              PyPI &#8599;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 6: InspectorAI -->
+        <article class="app-card" data-category="devtools" data-keywords="chrome extension javascript web data extraction dom ai groq gemini claude sidepanel manifest v3 side panel visual picker">
+          <div class="app-top-meta">
+            <span class="app-category">BROWSER EXTENSION</span>
+            <span class="badge-status badge-status-beta">
+              EXTENSION v1.0
+            </span>
+          </div>
+
+          <div class="app-header-block">
+            <div class="app-icon" style="background: rgba(6, 182, 212, 0.12); border-color: rgba(6, 182, 212, 0.35); color: #06b6d4;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="22" y1="12" x2="18" y2="12"></line>
+                <line x1="6" y1="12" x2="2" y2="12"></line>
+                <line x1="12" y1="6" x2="12" y2="2"></line>
+                <line x1="12" y1="22" x2="12" y2="18"></line>
+              </svg>
+            </div>
+            <div class="app-title-area">
+              <h3>InspectorAI</h3>
+              <span class="app-subtitle">github.com/infomity/InspectorAI</span>
+            </div>
+          </div>
+
+          <p class="app-description">
+            Production-ready Chrome extension for web data extraction and real-time AI insight. Interactively select any DOM element on the page, automatically prune noise to minimize token consumption, and analyze content directly within Chrome's side panel.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tech-tag">Chrome Extension</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Side Panel</span>
+            <span class="tech-tag">DOM Parser</span>
+            <span class="tech-tag">Gemini / Claude</span>
+            <span class="tech-tag">Manifest V3</span>
+          </div>
+
+          <div class="app-actions">
+            <a href="https://github.com/infomity/InspectorAI" target="_blank" rel="noopener noreferrer" class="btn-glass btn-sm" style="flex: 1;">
+              View Repository &#8599;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 7: AndroidSemanticSearch -->
+        <article class="app-card" data-category="mobile" data-keywords="kotlin android on-device ai semantic search vector embeddings objectbox lucene knn neural retrieval tflite">
           <div class="app-top-meta">
             <span class="app-category">EDGE MACHINE LEARNING</span>
             <span class="badge-status badge-status-source">
@@ -259,6 +455,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <circle cx="11" cy="11" r="3"></circle>
               </svg>
             </div>
             <div class="app-title-area">
@@ -268,24 +465,30 @@
           </div>
 
           <p class="app-description">
-            On-device semantic retrieval pipeline running local vector embeddings natively inside Android without sending queries or document indices to third-party cloud servers.
+            On-device semantic retrieval pipeline demonstrating local vector embeddings natively inside Android. Runs MiniLM-L6-V2 sentence embeddings, ObjectBox HNSW indexing, and Apache Lucene KNN without transmitting queries or documents to cloud servers.
           </p>
 
           <div class="tech-tags">
-            <span class="tech-tag">On-Device AI</span>
+            <span class="tech-tag">Kotlin</span>
+            <span class="tech-tag">TensorFlow Lite</span>
+            <span class="tech-tag">ObjectBox</span>
+            <span class="tech-tag">Lucene KNN</span>
             <span class="tech-tag">Vector Search</span>
-            <span class="tech-tag">Quantization</span>
-            <span class="tech-tag">Privacy</span>
           </div>
 
           <div class="app-actions">
-            <a href="#philosophy" class="btn-glass btn-sm" style="flex: 1;">
-              Read Architecture
+            <a href="https://github.com/hissain/AndroidSemanticSearch" target="_blank" rel="noopener noreferrer" class="btn-glass btn-sm" style="flex: 1;">
+              Research Repository &#8599;
             </a>
           </div>
         </article>
 
       </div>
+
+      <!-- Empty state message for searches -->
+      <p id="noCatalogMessage" style="text-align: center; color: var(--text-secondary); display: none; margin: 3rem 0; font-size: 1.05rem;">
+        No systems or tools found matching your search. Try another query or select "All Systems".
+      </p>
     </section>
 
     <!-- Studio Philosophy Bento Grid -->
@@ -360,7 +563,8 @@
 
       <div class="footer-links-grid">
         <a href="./bangla-keyboard/" class="footer-link">Bangla Keyboard</a>
-        <a href="./bangla-keyboard/privacy/" class="footer-link">App Privacy Policy</a>
+        <a href="https://cvealerts.infomity.workers.dev" target="_blank" rel="noopener noreferrer" class="footer-link">CVE Alert Live</a>
+        <a href="https://github.com/infomity/jscipy" target="_blank" rel="noopener noreferrer" class="footer-link">jSciPy Library</a>
         <a href="./privacy/" class="footer-link">Studio Privacy</a>
         <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Org</a>
         <a href="https://hissain.github.io/" target="_blank" rel="noopener noreferrer" class="footer-link footer-link-highlight">Architect Profile &#8599;</a>
@@ -369,6 +573,54 @@
   </footer>
 
   <script>
+    // Dynamic Filter & Search for Software Catalog
+    (function() {
+      const searchInput = document.getElementById('catalogSearchInput');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('#catalogGrid .app-card');
+      const noCatalogMessage = document.getElementById('noCatalogMessage');
+
+      let activeCategory = 'all';
+
+      function filterCatalog() {
+        const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-category');
+          const keywords = card.getAttribute('data-keywords') || '';
+          const cardText = card.textContent.toLowerCase();
+
+          const matchesCategory = (activeCategory === 'all' || cat === activeCategory);
+          const matchesSearch = !query || cardText.includes(query) || keywords.includes(query);
+
+          if (matchesCategory && matchesSearch) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (noCatalogMessage) {
+          noCatalogMessage.style.display = (visibleCount === 0) ? 'block' : 'none';
+        }
+      }
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          filterButtons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          activeCategory = this.getAttribute('data-category');
+          filterCatalog();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', filterCatalog);
+      }
+    })();
+
     function toggleMobileMenu() {
       const container = document.querySelector('.navbar-container');
       const btn = document.getElementById('mobileMenuBtn');

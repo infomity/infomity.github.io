@@ -519,6 +519,37 @@ h3 {
   border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
+.badge-status-source {
+  background: rgba(99, 102, 241, 0.12);
+  color: #818cf8;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.badge-status-live {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.catalog-search-bar {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: var(--tag-bg);
+  color: var(--text-color);
+  margin-bottom: 1.25rem;
+  outline: none;
+  font-family: var(--font-sans);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.catalog-search-bar:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
 /* ==========================================================================
    Modern Buttons (Glow, Glass, Ghost)
    ========================================================================== */
