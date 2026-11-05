@@ -83,8 +83,8 @@
       </nav>
 
       <div class="navbar-actions">
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
-          🌓
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          <span id="themeIcon">🌙</span>
         </button>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileMenu()">
           <span class="hamburger-line"></span>
@@ -194,13 +194,29 @@
       });
     });
 
-    const toggleBtn = document.getElementById('theme-toggle');
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+
+    function updateThemeIcon() {
+      if (html.getAttribute('data-theme') === 'light') {
+        if (themeIcon) themeIcon.textContent = '☀️';
+      } else {
+        if (themeIcon) themeIcon.textContent = '🌙';
+      }
+    }
+    updateThemeIcon();
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        if (html.getAttribute('data-theme') === 'light') {
+          html.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          html.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+        }
+        updateThemeIcon();
       });
     }
   </script>
