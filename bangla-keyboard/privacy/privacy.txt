@@ -98,7 +98,7 @@ this permanent URL with an updated "Last Updated" date.
 ----------------------
 If you have questions about this Privacy Policy, please contact the publisher:
 - Publisher: Infomity
-- Email: contact@infomity.com / hissain.khan@gmail.com
+- Email: infomity.inc@gmail.com
 - Organization GitHub: https://github.com/infomity
 - Studio Website: https://infomity.github.io/
 
