@@ -426,7 +426,7 @@
         <div class="meta-tags">
           <span class="meta-tag"><strong>Package:</strong> com.infomity.banglakeyboard</span>
           <span class="meta-tag"><strong>Publisher:</strong> Infomity</span>
-          <span class="meta-tag"><strong>Effective Date:</strong> November 1, 2026</span>
+          <span class="meta-tag"><strong>Effective Date:</strong> November 9, 2026</span>
           <span class="meta-tag"><strong>Target API:</strong> Android 8.0+ (API 26+)</span>
         </div>
       </header>
@@ -449,11 +449,11 @@
           </div>
           <div class="summary-item">
             <strong>🔒 No Keystroke Logging</strong>
-            What you type is processed in volatile memory for rendering and immediately discarded. Never saved to persistent disk.
+            What you type is processed in memory for rendering and is never written to disk. Only the suggestions you tap are remembered, privately on your device, and you can erase them with <em>Reset learned words</em>.
           </div>
           <div class="summary-item">
             <strong>📦 100% Offline Vocabulary</strong>
-            All 45,000+ words and n-gram suggestions are pre-packaged directly inside the application binary.
+            All word suggestions and the next-word pair list are pre-packaged directly inside the application binary.
           </div>
           <div class="summary-item">
             <strong>🛡️ Zero Third-Party Trackers</strong>
@@ -493,7 +493,10 @@
       <ul>
         <li><strong>Ephemeral RAM Processing:</strong> When you press keys (e.g. <code>a</code>-<code>m</code>-<code>i</code>), the characters are processed in local volatile RAM by the <code>InputMethodService</code> to compute candidate Bengali matches (<code>আমি</code>, <code>আমরা</code>).</li>
         <li><strong>Offline Pre-compiled Dictionary:</strong> Word suggestions are drawn from an internal static database derived from the CC0-licensed <strong>AI4Bharat IndicCorp v2</strong> corpus. No queries leave your phone.</li>
-        <li><strong>Automatic Discard:</strong> Once a word is committed to your active text field, intermediate buffer state is cleared from memory.</li>
+        <li><strong>Automatic Discard:</strong> Once a word is committed to your active text field, intermediate buffer state is cleared from memory. The text you type is never written to disk.</li>
+        <li><strong>Suggestions You Pick:</strong> Words you tap in the suggestion strip are remembered in the app's private storage (at most 500 entries) so the same choice is offered first next time. They are never sent anywhere and can be erased at any time with <em>Reset learned words</em> in the Setup screen. Words you merely type are not recorded.</li>
+        <li><strong>Next-Word Suggestions:</strong> These come from a word-pair list bundled with the app. Nothing is learned from your typing for them.</li>
+        <li><strong>Other Items Kept On Your Device:</strong> Your settings (number row, Bangla digits, key vibration, key sound, key preview, next-word suggestions, double space, keyboard theme and key height), your last language mode, and your recently used emoji (up to 24). All of it stays in private app storage, is removed when you uninstall the app, and cloud backup of app data is disabled.</li>
       </ul>
 
       <h2>4. Sensitive Field Protection (Passwords &amp; PINs)</h2>
@@ -522,7 +525,7 @@
 
       <h2>7. Dataset Attribution</h2>
       <p>
-        The phonetic dictionary rankings bundled within the APK utilize public lexical frequency counts from the <strong>AI4Bharat IndicCorp</strong> project developed by IIT Madras, licensed under CC0 / permissive open licenses. We thank the researchers for advancing open Indian language technologies.
+        The phonetic dictionary rankings bundled within the APK utilize public lexical frequency counts from the <strong>AI4Bharat IndicCorp</strong> project developed by IIT Madras, licensed under CC0 / permissive open licenses. We thank the researchers for advancing open Indian language technologies. The next-word pair list is derived from the same corpus and bundled in the same way; the keyboard does not learn word pairs from what you type.
       </p>
 
       <h2>8. Verification &amp; Security Auditing</h2>

@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bangla Keyboard — High-Performance Offline Bengali IME | Infomity</title>
-  <meta name="description" content="An ultra-lightweight, 100% offline Bangla phonetic keyboard for Android by Infomity. Zero telemetry, sub-15ms latency, AI4Bharat IndicCorp lexicon. Package: com.infomity.banglakeyboard.">
+  <meta name="description" content="An ultra-lightweight, 100% offline Bangla phonetic keyboard for Android by Infomity. Next-word suggestions, loose spelling, long-press letters, zero telemetry, sub-15ms latency, AI4Bharat IndicCorp lexicon. Package: com.infomity.banglakeyboard.">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Bangla Keyboard — High-Performance Offline Bengali IME | Infomity">
-  <meta property="og:description" content="100% offline Bangla phonetic keyboard for Android. Zero telemetry, sub-15ms latency, AI4Bharat IndicCorp lexicon.">
+  <meta property="og:description" content="100% offline Bangla phonetic keyboard for Android. Next-word suggestions, zero telemetry, sub-15ms latency, AI4Bharat IndicCorp lexicon.">
   <meta property="og:type" content="product">
   <meta property="og:url" content="https://infomity.github.io/bangla-keyboard/">
 
@@ -286,7 +286,7 @@
 
       <div class="metric-card">
         <div class="metric-label">Bundled Lexicon</div>
-        <div class="metric-value">45,000+</div>
+        <div class="metric-value">200k</div>
         <p class="metric-desc">Derived from openly licensed (CC0) AI4Bharat IndicCorp v2 frequency rankings.</p>
       </div>
 
@@ -325,7 +325,7 @@
             </div>
 
             <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
-              Type intuitively using plain lowercase English letters. Ambiguous spellings like <code>acho</code> are dynamically disambiguated to <strong>আছো</strong> using precompiled statistical word frequencies, eliminating tedious candidate picking.
+              Type intuitively using plain lowercase English letters. Ambiguous spellings like <code>acho</code> are dynamically disambiguated to <strong>আছো</strong> using precompiled statistical word frequencies, eliminating tedious candidate picking. After a word, the strip offers likely next words from a bundled word-pair list; loosely spelled input like <code>bhallo</code> still finds <strong>ভালো</strong>; long-pressing t, d, n or r opens the related Bangla letters; and holding Backspace deletes letter by letter, then word by word.
             </p>
           </div>
 
@@ -348,7 +348,7 @@
           <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">Air-Gapped Sandbox</h3>
           <span style="font-size: 0.8rem; color: #22d3ee; font-family: var(--font-mono); display: block; margin-bottom: 1rem;">MANIFEST-LEVEL ISOLATION</span>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
-            The app does not request or possess network sockets. Typing keystrokes, personal communications, and passwords never leave volatile device memory.
+            The app does not request or possess network sockets. Typing keystrokes, personal communications, and passwords never leave your device.
           </p>
         </div>
 
@@ -372,7 +372,7 @@
           <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">AI4Bharat Lexicon</h3>
           <span style="font-size: 0.8rem; color: #c084fc; font-family: var(--font-mono); display: block; margin-bottom: 1rem;">INDICCORP V2 CORPUS</span>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
-            Derived from the peer-reviewed AI4Bharat Bengali corpus. 45,000+ statistical word counts are compressed directly into the binary package.
+            Derived from the peer-reviewed AI4Bharat Bengali corpus. The statistical word counts and a small next-word pair list are compressed directly into the binary package.
           </p>
         </div>
 
@@ -466,7 +466,7 @@
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1.5rem; border-top: 1px solid var(--card-border); padding-top: 1.5rem; font-size: 0.88rem; color: var(--text-secondary);">
-          <div><strong style="color: var(--text-color);">No Keystroke Tracking:</strong> Keystrokes are processed solely in volatile RAM and never written to disk.</div>
+          <div><strong style="color: var(--text-color);">No Keystroke Tracking:</strong> Keystrokes are processed in memory and never written to disk. Only the suggestions you tap are remembered, privately on your device, and can be erased with Reset learned words.</div>
           <div><strong style="color: var(--text-color);">No Analytics SDKs:</strong> Zero Firebase, Facebook, or third-party telemetry libraries.</div>
           <div><strong style="color: var(--text-color);">No Cloud Backups:</strong> Android automatic cloud data backup is explicitly disabled.</div>
         </div>
