@@ -1,0 +1,152 @@
+OFFICIAL PRIVACY POLICY - GOOGLE PLAY COMPLIANT
+
+Privacy Policy & Data Safety
+
+Data safety disclosure for the Remogent Android application and its Remogent Host companion, published by Infomity.
+
+Package: io.github.infomity.remogent
+Publisher: Infomity
+Effective Date: November 14, 2026
+Target API: Android 8.0+ (API 26+)
+
+Executive Summary: We Collect No Data
+
+Remogent is a remote control for the Gemini CLI and Claude Code tools that run on your own computer. There is no Remogent cloud: the developer runs no servers, has no user accounts and receives nothing from your device.
+
+🚫 No Developer Servers
+The app talks only to the computer you paired it with. There is no relay, backend or sign-in operated by Infomity.
+
+🔒 Pinned, Encrypted Link
+Every connection uses TLS pinned to the SHA-256 fingerprint from your pairing QR code, plus a private access token.
+
+🛡️ Zero Trackers
+No analytics, advertising, crash-reporting or attribution SDKs are included.
+
+🗝️ Keys Stay in the Keystore
+Pairing secrets are stored encrypted with a key held in the Android Keystore. Cloud backup of app data is disabled.
+
+1. Scope and Who We Are
+
+This policy covers (a) the Remogent Android app and (b) the Remogent Host background program you install on your own Windows, macOS or Linux computer so the app can reach it. Remogent is free and open source and is published by Infomity (lead developer: Md. Sazzad Hissain Khan). Contact details are in section 13.
+
+2. Information We Do Not Collect
+
+Infomity does not collect, receive, store, share or sell any personal data from the Remogent app or the Remogent Host. Specifically, we do not collect:
+
+- Your prompts, chats, files or code. They travel only between your phone and your own computer.
+
+- Personal identifiers: name, email address, phone number, contacts, advertising ID, Android ID or IMEI.
+
+- Location data. The app does not request location permission.
+
+- Usage analytics or diagnostics. We receive no telemetry, crash reports or behavioural metrics.
+
+- Camera images or biometric data. See sections 5 and 6 for how scanning and biometrics work.
+
+3. What Is Stored, and Where
+
+On your phone (private app storage, removed when you uninstall the app):
+
+- Host profiles: for each computer you pair, its display name, network address and port, its access token and its TLS certificate fingerprint. These are held in EncryptedSharedPreferences, protected by an AES-256-GCM key in the Android Keystore.
+
+- App settings: for example your light or dark theme choice.
+
+- Chat content in memory only. Conversations you see in the app are held in memory while the app is open and are not written to a database or file on the phone.
+
+- The app copies something to the clipboard only when you tap a copy button (for example the certificate fingerprint or a code block).
+
+On your computer (kept by the Remogent Host, entirely under your control):
+
+- Host identity: a self-signed certificate and access token, created when you first run the host.
+
+- Chat history: a local transcript store (~/.remogent/sessions.json) so chats can be listed and resumed after a restart. The file is restricted to your user account and is limited to roughly 100 chats, 14 days and about 2 MiB per chat. It can be disabled with the --no-persist option.
+
+- Log file: when the autostart service is used, a local log such as ~/.remogent/daemon.log.
+
+None of this is transmitted to Infomity. Because chat transcripts may contain code or other sensitive material you worked on, treat the folder ~/.remogent like any other private data on your computer.
+
+4. How the Connection and the AI Tools Work
+
+- Direct connection only: the app opens a WebSocket over TLS directly to the host address in your pairing QR code. Depending on your own setup this is your local Wi-Fi, a USB reverse tunnel, or a private network or tunnel you control (for example Tailscale or a Cloudflare tunnel). Infomity is not in that path. The host may also announce its name on your local network using mDNS to make pairing easier.
+
+- Authentication: the connection is accepted only with the random access token from your pairing, and the app refuses any host whose certificate fingerprint does not match the one you scanned.
+
+- Third-party AI providers: the Remogent Host launches the Gemini CLI or Claude Code program that you installed and signed into on your computer, and passes your prompts to it. Those tools send your content to their providers (Google and Anthropic respectively) under your account and their privacy policies and terms. Remogent does not receive, proxy or store that traffic, and does not have access to your provider credentials.
+
+5. Device Permissions Declaration
+
+- android.permission.INTERNET — required to connect to the computer you paired (local network or private tunnel).
+
+- android.permission.ACCESS_NETWORK_STATE — used to notice when the network is lost or restored so the app can show its connection status and reconnect.
+
+- android.permission.USE_BIOMETRIC — lets the app ask Android to show the system fingerprint or face prompt before you approve sensitive actions. Android performs the check; the app only learns whether it succeeded and never receives your biometric data.
+
+No camera permission: the app does not request CAMERA. QR codes are read by Google's code scanner (section 6), which runs in Google Play services and returns only the decoded text to the app.
+
+6. Third-Party Components
+
+- Google code scanner (Google Play services / ML Kit): used for the "Scan QR" button. Scanning happens on your device inside Google Play services, and the app receives only the text of the code. Google may process technical data about the scanner module under its own privacy policy (policies.google.com/privacy (https://policies.google.com/privacy)); Infomity does not receive it.
+
+- Patreon link: the "Support on Patreon" button simply opens patreon.com/Infomity in your browser. The app sends nothing to Patreon; once the page opens, Patreon's own policy applies.
+
+- Open-source libraries: the app uses standard libraries (for example Jetpack Compose, OkHttp, AndroidX Security and Biometric, and kotlinx.serialization). None of them is an advertising, analytics or tracking SDK.
+
+7. Security
+
+- Transport encryption with TLS and certificate pinning by SHA-256 fingerprint, with no dependency on public certificate authorities.
+
+- A random 32-byte access token per host, stored encrypted on the phone by the Android Keystore.
+
+- Actions that edit files or run commands raise an approval sheet on the phone, which you can allow once, allow for the session, or deny, and which can require biometric confirmation.
+
+- The release app is built with code shrinking, string encryption and debug logging removed.
+
+- Please note: pairing gives the phone the ability to drive coding tools on your computer. Keep the pairing QR code private, rotate the host identity if a phone is lost (install --rotate or start --rotate on the host), and choose the permission mode that suits you.
+
+8. Retention and Deletion
+
+Infomity holds no copy of your data, so there is nothing for us to delete. You control all of it:
+
+- Phone: remove a paired computer under Settings -> Host profiles, or uninstall the app to erase all of its stored data.
+
+- Chats: use Delete chat in the app to remove a chat from the host's history. Deleting ~/.remogent/sessions.json clears all history.
+
+- Computer: run node dist/index.js uninstall in the companion folder to remove the autostart service, and delete the ~/.remogent folder to remove the identity, history and logs.
+
+9. Children's Privacy
+
+Remogent is a developer tool and is not directed to children. Because the developer collects no personal information from anyone, no data is collected from children either.
+
+10. Your Rights (GDPR, UK GDPR, CCPA and Similar Laws)
+
+Data-protection laws give people rights to access, correct, delete or port their personal data and to object to its sale or sharing. Infomity does not collect or process personal data through Remogent and does not sell or share any, so there is no data held about you for us to provide or erase. You can exercise full control over the data that does exist on your own devices as described in section 8, and you may contact us with any question.
+
+11. Google Play Data Safety Summary
+
+- Data collected by the developer: none.
+
+- Data shared with third parties by the developer: none.
+
+- Data encrypted in transit: yes (TLS with certificate pinning).
+
+- Data deletion: uninstalling the app removes everything stored on the phone; no data exists on developer servers.
+
+- Advertising, analytics and tracking: none.
+
+- Independent security review: not performed. The source code is public for anyone to review.
+
+12. Policy Updates
+
+We may update this policy to reflect app changes or Google Play requirements. Revisions are published at this URL with a new "Effective Date". If a future version ever collects data, this policy and the Play Data safety form will be updated before that version is released.
+
+13. Developer Contact & Inquiries
+
+- Publisher: Infomity
+
+- Lead Developer: Md. Sazzad Hissain Khan
+
+- Email: infomity.inc@gmail.com (mailto:infomity.inc@gmail.com)
+
+- Organization GitHub: https://github.com/infomity (https://github.com/infomity)
+
+- Website: https://infomity.github.io/ (https://infomity.github.io/)

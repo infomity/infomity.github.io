@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Remogent | Infomity</title>
+  <meta name="description" content="Official Privacy Policy and Data Safety Disclosure for Remogent (io.github.infomity.remogent) for Android by Infomity.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Dark-first obsidian luxury palette (ZeBeyond Design System) */
+      --bg-color: #07090e;
+      --bg-gradient: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 60%),
+                     radial-gradient(circle at 100% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
+                     radial-gradient(circle at 0% 50%, rgba(99, 102, 241, 0.04) 0%, transparent 40%);
+      --card-bg: rgba(15, 20, 31, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(16, 185, 129, 0.35);
+      --text-color: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-color: #10b981;
+      --accent-glow: rgba(16, 185, 129, 0.25);
+      --tag-bg: rgba(255, 255, 255, 0.04);
+      --tag-border: rgba(255, 255, 255, 0.08);
+      --navbar-bg: rgba(7, 9, 14, 0.25);
+      --navbar-border: rgba(255, 255, 255, 0.10);
+      --navbar-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      --shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+      --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+    }
+
+    [data-theme="light"] {
+      --bg-color: #f8fafc;
+      --bg-gradient: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.05) 0%, transparent 60%),
+                     radial-gradient(circle at 100% 20%, rgba(6, 182, 212, 0.04) 0%, transparent 50%);
+      --card-bg: rgba(255, 255, 255, 0.9);
+      --card-border: rgba(226, 232, 240, 0.9);
+      --card-border-hover: rgba(16, 185, 129, 0.5);
+      --text-color: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --accent-color: #059669;
+      --accent-glow: rgba(5, 150, 105, 0.15);
+      --tag-bg: #f1f5f9;
+      --tag-border: #e2e8f0;
+      --navbar-bg: rgba(255, 255, 255, 0.30);
+      --navbar-border: rgba(0, 0, 0, 0.08);
+      --navbar-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      background-image: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-color);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    [data-theme="light"] body::before {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+    }
+
+    /* Floating Top Bar */
+    .topbar-wrapper {
+      position: sticky;
+      top: 1rem;
+      z-index: 100;
+      max-width: 860px;
+      margin: 1rem auto 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .topbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--navbar-bg);
+      backdrop-filter: blur(8px) saturate(140%);
+      -webkit-backdrop-filter: blur(8px) saturate(140%);
+      border: 1px solid var(--navbar-border);
+      border-radius: 9999px;
+      padding: 0.6rem 1.25rem;
+      box-shadow: var(--navbar-shadow);
+    }
+
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-nav:hover {
+      color: var(--text-color);
+      background: var(--tag-bg);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--accent-color);
+      box-shadow: 0 0 8px var(--accent-color);
+    }
+
+    .theme-toggle-btn {
+      background: var(--tag-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-color);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--accent-color);
+      transform: rotate(15deg);
+    }
+
+    /* Document Container */
+    .doc-container {
+      max-width: 860px;
+      margin: 2rem auto 5rem auto;
+      padding: 0 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .doc-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 3.5rem 3rem;
+      box-shadow: var(--shadow);
+    }
+
+    .doc-header {
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin: 1rem 0 0.5rem 0;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    [data-theme="light"] .gradient-text {
+      background: linear-gradient(135deg, #0f172a 0%, #334155 70%, #059669 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .meta-tag {
+      font-size: 0.8rem;
+      background: var(--tag-bg);
+      border: 1px solid var(--card-border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+    }
+
+    .summary-callout {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-left: 4px solid var(--accent-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2.25rem 0;
+      box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.15);
+    }
+
+    .summary-callout h3 {
+      margin: 0 0 0.5rem 0;
+      color: var(--accent-color);
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .summary-item {
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .summary-item strong {
+      color: var(--text-color);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem 0;
+      color: var(--text-color);
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 0.5rem;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin: 0 0 1.25rem 0;
+      line-height: 1.75;
+    }
+
+    ul {
+      color: var(--text-secondary);
+      padding-left: 1.5rem;
+      margin: 0 0 1.5rem 0;
+      line-height: 1.8;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      color: var(--text-color);
+    }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.88em;
+      background: var(--tag-bg);
+      border: 1px solid var(--card-border);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      color: #34d399;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .doc-footer {
+      border-top: 1px solid var(--card-border);
+      padding-top: 2rem;
+      margin-top: 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .topbar-wrapper {
+        padding: 0 0.75rem;
+      }
+      .topbar-container {
+        padding: 0.5rem 0.85rem;
+      }
+      .status-badge {
+        display: none;
+      }
+      .doc-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .doc-card {
+        padding: 2rem 1.5rem;
+      }
+      h1 {
+        font-size: 1.85rem;
+      }
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Minimal Floating Navigation Bar -->
+  <header class="topbar-wrapper">
+    <div class="topbar-container">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <a href="../../" class="btn-nav">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Infomity Studio</span>
+        </a>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>Zero-Telemetry</span>
+        </div>
+
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Document Container -->
+  <main class="doc-container">
+    <article class="doc-card">
+
+      <header class="doc-header">
+        <div class="status-badge" style="margin-bottom: 0.5rem;">
+          <span class="status-dot"></span>
+          OFFICIAL PRIVACY POLICY &bull; GOOGLE PLAY COMPLIANT
+        </div>
+        <h1 class="gradient-text">Privacy Policy &amp; Data Safety</h1>
+        <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem;">
+          Data safety disclosure for the <strong>Remogent</strong> Android application and its <strong>Remogent Host</strong> companion, published by <strong>Infomity</strong>.
+        </p>
+
+        <div class="meta-tags">
+          <span class="meta-tag"><strong>Package:</strong> io.github.infomity.remogent</span>
+          <span class="meta-tag"><strong>Publisher:</strong> Infomity</span>
+          <span class="meta-tag"><strong>Effective Date:</strong> November 14, 2026</span>
+          <span class="meta-tag"><strong>Target API:</strong> Android 8.0+ (API 26+)</span>
+        </div>
+      </header>
+
+      <section class="summary-callout">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          Executive Summary: We Collect No Data
+        </h3>
+        <p style="margin-bottom: 0.5rem; font-size: 0.92rem; color: var(--text-color);">
+          Remogent is a remote control for the <strong>Gemini CLI</strong> and <strong>Claude Code</strong> tools that run on <em>your own computer</em>. There is no Remogent cloud: the developer runs no servers, has no user accounts and receives nothing from your device.
+        </p>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <strong>🚫 No Developer Servers</strong>
+            The app talks only to the computer you paired it with. There is no relay, backend or sign-in operated by Infomity.
+          </div>
+          <div class="summary-item">
+            <strong>🔒 Pinned, Encrypted Link</strong>
+            Every connection uses TLS pinned to the SHA-256 fingerprint from your pairing QR code, plus a private access token.
+          </div>
+          <div class="summary-item">
+            <strong>🛡️ Zero Trackers</strong>
+            No analytics, advertising, crash-reporting or attribution SDKs are included.
+          </div>
+          <div class="summary-item">
+            <strong>🗝️ Keys Stay in the Keystore</strong>
+            Pairing secrets are stored encrypted with a key held in the Android Keystore. Cloud backup of app data is disabled.
+          </div>
+        </div>
+      </section>
+
+      <h2>1. Scope and Who We Are</h2>
+      <p>
+        This policy covers (a) the <strong>Remogent</strong> Android app and (b) the <strong>Remogent Host</strong> background program you install on your own Windows, macOS or Linux computer so the app can reach it. Remogent is free and open source and is published by <strong>Infomity</strong> (lead developer: Md. Sazzad Hissain Khan). Contact details are in section 13.
+      </p>
+
+      <h2>2. Information We Do Not Collect</h2>
+      <p>
+        <strong>Infomity does not collect, receive, store, share or sell any personal data from the Remogent app or the Remogent Host.</strong> Specifically, we do not collect:
+      </p>
+      <ul>
+        <li><strong>Your prompts, chats, files or code.</strong> They travel only between your phone and your own computer.</li>
+        <li><strong>Personal identifiers:</strong> name, email address, phone number, contacts, advertising ID, Android ID or IMEI.</li>
+        <li><strong>Location data.</strong> The app does not request location permission.</li>
+        <li><strong>Usage analytics or diagnostics.</strong> We receive no telemetry, crash reports or behavioural metrics.</li>
+        <li><strong>Camera images or biometric data.</strong> See sections 5 and 6 for how scanning and biometrics work.</li>
+      </ul>
+
+      <h2>3. What Is Stored, and Where</h2>
+      <p><strong>On your phone</strong> (private app storage, removed when you uninstall the app):</p>
+      <ul>
+        <li><strong>Host profiles:</strong> for each computer you pair, its display name, network address and port, its access token and its TLS certificate fingerprint. These are held in <code>EncryptedSharedPreferences</code>, protected by an AES-256-GCM key in the Android Keystore.</li>
+        <li><strong>App settings:</strong> for example your light or dark theme choice.</li>
+        <li><strong>Chat content in memory only.</strong> Conversations you see in the app are held in memory while the app is open and are not written to a database or file on the phone.</li>
+        <li>The app copies something to the clipboard only when you tap a copy button (for example the certificate fingerprint or a code block).</li>
+      </ul>
+      <p><strong>On your computer</strong> (kept by the Remogent Host, entirely under your control):</p>
+      <ul>
+        <li><strong>Host identity:</strong> a self-signed certificate and access token, created when you first run the host.</li>
+        <li><strong>Chat history:</strong> a local transcript store (<code>~/.remogent/sessions.json</code>) so chats can be listed and resumed after a restart. The file is restricted to your user account and is limited to roughly 100 chats, 14 days and about 2 MiB per chat. It can be disabled with the <code>--no-persist</code> option.</li>
+        <li><strong>Log file:</strong> when the autostart service is used, a local log such as <code>~/.remogent/daemon.log</code>.</li>
+      </ul>
+      <p>
+        None of this is transmitted to Infomity. Because chat transcripts may contain code or other sensitive material you worked on, treat the folder <code>~/.remogent</code> like any other private data on your computer.
+      </p>
+
+      <h2>4. How the Connection and the AI Tools Work</h2>
+      <ul>
+        <li><strong>Direct connection only:</strong> the app opens a WebSocket over TLS directly to the host address in your pairing QR code. Depending on your own setup this is your local Wi-Fi, a USB reverse tunnel, or a private network or tunnel you control (for example Tailscale or a Cloudflare tunnel). Infomity is not in that path. The host may also announce its name on your local network using mDNS to make pairing easier.</li>
+        <li><strong>Authentication:</strong> the connection is accepted only with the random access token from your pairing, and the app refuses any host whose certificate fingerprint does not match the one you scanned.</li>
+        <li><strong>Third-party AI providers:</strong> the Remogent Host launches the <strong>Gemini CLI</strong> or <strong>Claude Code</strong> program that you installed and signed into on your computer, and passes your prompts to it. Those tools send your content to their providers (Google and Anthropic respectively) under <em>your</em> account and <em>their</em> privacy policies and terms. Remogent does not receive, proxy or store that traffic, and does not have access to your provider credentials.</li>
+      </ul>
+
+      <h2>5. Device Permissions Declaration</h2>
+      <ul>
+        <li><code>android.permission.INTERNET</code> — required to connect to the computer you paired (local network or private tunnel).</li>
+        <li><code>android.permission.ACCESS_NETWORK_STATE</code> — used to notice when the network is lost or restored so the app can show its connection status and reconnect.</li>
+        <li><code>android.permission.USE_BIOMETRIC</code> — lets the app ask Android to show the system fingerprint or face prompt before you approve sensitive actions. Android performs the check; the app only learns whether it succeeded and never receives your biometric data.</li>
+      </ul>
+      <p>
+        <strong>No camera permission:</strong> the app does not request <code>CAMERA</code>. QR codes are read by Google's code scanner (section 6), which runs in Google Play services and returns only the decoded text to the app.
+      </p>
+
+      <h2>6. Third-Party Components</h2>
+      <ul>
+        <li><strong>Google code scanner (Google Play services / ML Kit):</strong> used for the "Scan QR" button. Scanning happens on your device inside Google Play services, and the app receives only the text of the code. Google may process technical data about the scanner module under its own privacy policy (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>); Infomity does not receive it.</li>
+        <li><strong>Patreon link:</strong> the "Support on Patreon" button simply opens <code>patreon.com/Infomity</code> in your browser. The app sends nothing to Patreon; once the page opens, Patreon's own policy applies.</li>
+        <li><strong>Open-source libraries:</strong> the app uses standard libraries (for example Jetpack Compose, OkHttp, AndroidX Security and Biometric, and kotlinx.serialization). None of them is an advertising, analytics or tracking SDK.</li>
+      </ul>
+
+      <h2>7. Security</h2>
+      <ul>
+        <li>Transport encryption with TLS and certificate pinning by SHA-256 fingerprint, with no dependency on public certificate authorities.</li>
+        <li>A random 32-byte access token per host, stored encrypted on the phone by the Android Keystore.</li>
+        <li>Actions that edit files or run commands raise an approval sheet on the phone, which you can allow once, allow for the session, or deny, and which can require biometric confirmation.</li>
+        <li>The release app is built with code shrinking, string encryption and debug logging removed.</li>
+        <li><strong>Please note:</strong> pairing gives the phone the ability to drive coding tools on your computer. Keep the pairing QR code private, rotate the host identity if a phone is lost (<code>install --rotate</code> or <code>start --rotate</code> on the host), and choose the permission mode that suits you.</li>
+      </ul>
+
+      <h2>8. Retention and Deletion</h2>
+      <p>
+        Infomity holds no copy of your data, so there is nothing for us to delete. You control all of it:
+      </p>
+      <ul>
+        <li><strong>Phone:</strong> remove a paired computer under <em>Settings &rarr; Host profiles</em>, or uninstall the app to erase all of its stored data.</li>
+        <li><strong>Chats:</strong> use <em>Delete chat</em> in the app to remove a chat from the host's history. Deleting <code>~/.remogent/sessions.json</code> clears all history.</li>
+        <li><strong>Computer:</strong> run <code>node dist/index.js uninstall</code> in the <code>companion</code> folder to remove the autostart service, and delete the <code>~/.remogent</code> folder to remove the identity, history and logs.</li>
+      </ul>
+
+      <h2>9. Children's Privacy</h2>
+      <p>
+        Remogent is a developer tool and is not directed to children. Because the developer collects no personal information from anyone, no data is collected from children either.
+      </p>
+
+      <h2>10. Your Rights (GDPR, UK GDPR, CCPA and Similar Laws)</h2>
+      <p>
+        Data-protection laws give people rights to access, correct, delete or port their personal data and to object to its sale or sharing. Infomity does not collect or process personal data through Remogent and does not sell or share any, so there is no data held about you for us to provide or erase. You can exercise full control over the data that does exist on your own devices as described in section 8, and you may contact us with any question.
+      </p>
+
+      <h2>11. Google Play Data Safety Summary</h2>
+      <ul>
+        <li><strong>Data collected by the developer:</strong> none.</li>
+        <li><strong>Data shared with third parties by the developer:</strong> none.</li>
+        <li><strong>Data encrypted in transit:</strong> yes (TLS with certificate pinning).</li>
+        <li><strong>Data deletion:</strong> uninstalling the app removes everything stored on the phone; no data exists on developer servers.</li>
+        <li><strong>Advertising, analytics and tracking:</strong> none.</li>
+        <li><strong>Independent security review:</strong> not performed. The source code is public for anyone to review.</li>
+      </ul>
+
+      <h2>12. Policy Updates</h2>
+      <p>
+        We may update this policy to reflect app changes or Google Play requirements. Revisions are published at this URL with a new "Effective Date". If a future version ever collects data, this policy and the Play Data safety form will be updated before that version is released.
+      </p>
+
+      <h2>13. Developer Contact &amp; Inquiries</h2>
+      <ul>
+        <li><strong>Publisher:</strong> Infomity</li>
+        <li><strong>Lead Developer:</strong> Md. Sazzad Hissain Khan</li>
+        <li><strong>Email:</strong> <a href="mailto:infomity.inc@gmail.com">infomity.inc@gmail.com</a></li>
+        <li><strong>Organization GitHub:</strong> <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer">https://github.com/infomity</a></li>
+        <li><strong>Website:</strong> <a href="https://infomity.github.io/">https://infomity.github.io/</a></li>
+      </ul>
+
+      <footer class="doc-footer">
+        <div>
+          &copy; 2026 Infomity. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="./privacy.txt" target="_blank">Raw Plain Text Policy</a>
+          <a href="../../">Infomity Studio</a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+
+    function updateThemeIcon() {
+      if (html.getAttribute('data-theme') === 'light') {
+        if (themeIcon) themeIcon.textContent = '☀️';
+      } else {
+        if (themeIcon) themeIcon.textContent = '🌙';
+      }
+    }
+    updateThemeIcon();
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        if (html.getAttribute('data-theme') === 'light') {
+          html.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          html.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+        }
+        updateThemeIcon();
+      });
+    }
+  </script>
+
+</body>
+</html>
+

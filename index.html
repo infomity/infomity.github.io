@@ -54,6 +54,7 @@
       <nav class="navbar-links">
         <a href="#apps" class="nav-link">Software</a>
         <a href="./bangla-keyboard/" class="nav-link">Bangla Keyboard</a>
+        <a href="./remogent/" class="nav-link">Remogent</a>
         <a href="#philosophy" class="nav-link">Philosophy</a>
         <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
         <a href="./privacy/" class="nav-link">Privacy</a>
@@ -117,7 +118,7 @@
           <div class="metric-card">
             <div class="metric-label">Network Exfiltration</div>
             <div class="metric-value">0 KB</div>
-            <p class="metric-desc">Zero socket access. Manifest forbids internet connectivity.</p>
+            <p class="metric-desc">Bangla Keyboard has zero socket access. Its manifest forbids internet connectivity.</p>
           </div>
           <div class="metric-card">
             <div class="metric-label">Offline Autonomy</div>
@@ -155,8 +156,8 @@
         <input type="text" id="catalogSearchInput" class="catalog-search-bar" placeholder="Search systems, tools, libraries, or tech stacks (e.g. Kotlin, Python, DSP, Cloudflare, Node)..." aria-label="Search software catalog">
 
         <div class="filter-tabs" style="margin: 0;">
-          <button class="filter-btn active" data-category="all">All Systems (6)</button>
-          <button class="filter-btn" data-category="devtools">Developer Tools &amp; AI (3)</button>
+          <button class="filter-btn active" data-category="all">All Systems (7)</button>
+          <button class="filter-btn" data-category="devtools">Developer Tools &amp; AI (4)</button>
           <button class="filter-btn" data-category="cloud">Cloud &amp; Security (1)</button>
           <button class="filter-btn" data-category="dsp">Scientific &amp; DSP (1)</button>
           <button class="filter-btn" data-category="mobile">Mobile Systems (1)</button>
@@ -212,6 +213,53 @@
               Explore Showcase &rarr;
             </a>
             <a href="./bangla-keyboard/privacy/" class="btn-glass btn-sm">
+              Privacy Policy
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 1b: Remogent -->
+        <article class="app-card" data-category="devtools" data-keywords="android kotlin jetpack compose remote claude code gemini cli agent approvals tailscale pinned tls websocket node terminal phone remogent">
+          <div class="app-top-meta">
+            <span class="app-category">REMOTE AI AGENT CLIENT</span>
+            <span class="badge-status badge-status-beta">
+              <span class="status-dot"></span>
+              BETA
+            </span>
+          </div>
+
+          <div class="app-header-block">
+            <div class="app-icon" style="background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.35); color: #10b981;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <polyline points="9 9 12 11.5 9 14"></polyline>
+                <line x1="13" y1="15" x2="16" y2="15"></line>
+              </svg>
+            </div>
+            <div class="app-title-area">
+              <h3>Remogent</h3>
+              <span class="app-subtitle">github.com/infomity/Remogent</span>
+            </div>
+          </div>
+
+          <p class="app-description">
+            Drive Gemini CLI and Claude Code from your Android phone. Start chats, watch reasoning and tool calls stream in, and approve edits and commands with a diff preview, over a direct pinned-TLS connection to your own PC via Wi-Fi or Tailscale, with no relay, subscription or telemetry.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tech-tag">Android</span>
+            <span class="tech-tag">Kotlin</span>
+            <span class="tech-tag">Jetpack Compose</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Pinned TLS</span>
+            <span class="tech-tag">Tailscale</span>
+          </div>
+
+          <div class="app-actions">
+            <a href="./remogent/" class="btn-glow btn-sm" style="flex: 1;">
+              Explore Showcase &rarr;
+            </a>
+            <a href="./remogent/privacy/" class="btn-glass btn-sm">
               Privacy Policy
             </a>
           </div>
@@ -468,7 +516,7 @@
           </div>
           <h3 style="font-size: 1.2rem; margin: 0 0 0.6rem 0; color: var(--text-color);">Zero-Telemetry by Design</h3>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
-            Our mobile tools, including Bangla Keyboard, omit the <code>android.permission.INTERNET</code> declaration entirely. Data cannot leave the device because the OS kernel itself forbids socket creation.
+            Bangla Keyboard omits the <code>android.permission.INTERNET</code> declaration entirely. Data cannot leave the device because the OS kernel itself forbids socket creation. Where a tool needs a network, as Remogent does to reach your own PC, it uses a direct, pinned-TLS connection with no cloud relay.
           </p>
         </div>
 
@@ -521,6 +569,7 @@
 
       <div class="footer-links-grid">
         <a href="./bangla-keyboard/" class="footer-link">Bangla Keyboard</a>
+        <a href="./remogent/" class="footer-link">Remogent</a>
         <a href="https://cvealerts.infomity.workers.dev" target="_blank" rel="noopener noreferrer" class="footer-link">CVE Alert Live</a>
         <a href="https://github.com/infomity/jscipy" target="_blank" rel="noopener noreferrer" class="footer-link">jSciPy Library</a>
         <a href="./privacy/" class="footer-link">Studio Privacy</a>
