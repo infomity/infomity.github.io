@@ -322,16 +322,18 @@
           <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-color); font-family: var(--font-mono); margin-bottom: 0.75rem;">01</div>
           <h4 style="margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--text-color);">Set Up the PC Host</h4>
           <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0 0 0.75rem 0; line-height: 1.6;">
-            Clone the repository and run one command in <code>companion/</code>. It installs, builds, checks your setup and registers an autostart service that runs as you.
+            On the PC, clone the repository and run one command in the <code>companion</code> folder. It installs, builds, checks your setup, starts the host and registers it to start at every sign-in, running as you. It ends by showing the pairing QR code.
           </p>
-          <code style="display: block; font-size: 0.82rem; padding: 0.5rem 0.75rem; border-radius: 8px; background: rgba(0, 0, 0, 0.3); overflow-x: auto;">npm run setup</code>
+          <code style="display: block; font-size: 0.82rem; padding: 0.5rem 0.75rem; border-radius: 8px; background: rgba(0, 0, 0, 0.3); overflow-x: auto; white-space: pre;">git clone https://github.com/infomity/Remogent
+cd Remogent/companion
+npm run setup</code>
         </div>
 
         <div class="card" style="padding: 1.75rem;">
           <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-color); font-family: var(--font-mono); margin-bottom: 0.75rem;">02</div>
           <h4 style="margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--text-color);">Pair with the QR</h4>
           <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0; line-height: 1.6;">
-            In the app, open the drawer, expand the host card, tap <strong>Pair new host</strong> and scan the code the PC shows (run <code>npm run pair</code> to show it again). The app verifies the fingerprint and connects.
+            Put the phone on the same Wi-Fi as the PC. In the app, tap <strong>Scan QR to pair</strong> on the first screen and scan the code the PC shows. If a host is already paired, open the drawer, expand the host card and tap <strong>Pair new host</strong>. To show the code again, run <code>npm run pair</code> in <code>companion</code>. No typing and no camera permission needed. The app verifies the fingerprint and connects.
           </p>
         </div>
 
