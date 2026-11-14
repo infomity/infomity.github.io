@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Remogent — Drive Gemini CLI &amp; Claude Code from Your Phone | Infomity</title>
-  <meta name="description" content="Remogent is a free Android app and lightweight PC companion that lets you monitor, prompt and approve Gemini CLI and Claude Code from your phone over your own Wi-Fi or Tailscale. Pinned-TLS pairing, biometric-gated approvals, no cloud relay, no subscription, no telemetry.">
+  <title>Remogent — Drive Claude Code, Gemini CLI &amp; Codex from Your Phone | Infomity</title>
+  <meta name="description" content="Remogent is a free Android app and lightweight PC companion that lets you monitor, prompt and approve Claude Code, Gemini CLI and Codex CLI from your phone over your own Wi-Fi or Tailscale. Pinned-TLS pairing, biometric-gated approvals, no cloud relay, no subscription, no telemetry.">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Remogent — Drive Gemini CLI &amp; Claude Code from Your Phone | Infomity">
+  <meta property="og:title" content="Remogent — Drive Claude Code, Gemini CLI &amp; Codex from Your Phone | Infomity">
   <meta property="og:description" content="Prompt and approve terminal AI agents from your Android phone. Direct, pinned-TLS connection to your own PC. No relay, no subscription, no telemetry.">
   <meta property="og:type" content="product">
   <meta property="og:url" content="https://infomity.github.io/remogent/">
@@ -89,7 +89,7 @@
       </h1>
 
       <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7; max-width: 740px; margin: 0 auto 2.25rem auto;">
-        Remogent is an Android app and a small companion for your PC. Start, watch and approve <strong>Gemini CLI</strong> and <strong>Claude Code</strong> sessions from your phone over your own Wi-Fi or Tailscale, with a direct, certificate-pinned connection and no relay server, subscription or telemetry.
+        Remogent is an Android app and a small companion for your PC. Start, watch and approve <strong>Claude Code</strong>, <strong>Gemini CLI</strong> and <strong>Codex CLI</strong> sessions from your phone over your own Wi-Fi or Tailscale, with a direct, certificate-pinned connection and no relay server, subscription or telemetry.
       </p>
 
       <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem;">
@@ -178,7 +178,7 @@
       <div class="metric-card">
         <div class="metric-label">AI Engines</div>
         <div class="metric-value">2</div>
-        <p class="metric-desc">Gemini CLI over ACP and Claude Code over stream-json, both driven from the same chat UI.</p>
+        <p class="metric-desc">Claude Code over stream-json, Gemini CLI over ACP and Codex CLI over its app-server protocol, all driven from the same chat UI.</p>
       </div>
 
       <div class="metric-card">
@@ -272,7 +272,7 @@
             </div>
           </div>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
-            Reconnect and the transcript replays exactly where you left off. Transcripts are saved on your PC, and Claude Code chats resume with their context after a host restart.
+            Reconnect and the transcript replays exactly where you left off. Transcripts are saved on your PC, and Claude Code and Codex chats resume with their context after a host restart.
           </p>
         </div>
 
@@ -312,7 +312,7 @@
       <div style="text-align: center; max-width: 650px; margin: 0 auto 3rem auto;">
         <h2 style="font-size: 2.2rem; margin-bottom: 0.75rem;">Up and Running in Three Steps</h2>
         <p style="color: var(--text-secondary); font-size: 1.05rem;">
-          You need Node.js 20+ and at least one of <code>claude</code> or <code>gemini</code> installed on the PC, and Android 8.0+ on the phone.
+          You need Node.js 20+ and at least one of <code>claude</code>, <code>gemini</code> or <code>codex</code> installed on the PC, and Android 8.0+ on the phone.
         </p>
       </div>
 
@@ -375,7 +375,7 @@ npm run setup</code>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1.5rem; border-top: 1px solid var(--card-border); padding-top: 1.5rem; font-size: 0.88rem; color: var(--text-secondary);">
           <div><strong style="color: var(--text-color);">Direct only:</strong> Your prompts and code go from phone to your own PC. There is no Infomity cloud or relay in the path.</div>
           <div><strong style="color: var(--text-color);">No analytics SDKs:</strong> No Firebase, ad or tracking libraries, and no accounts.</div>
-          <div><strong style="color: var(--text-color);">Your engines, your logins:</strong> The agents run on your PC under your own Claude Code or Gemini CLI sign-in. Remogent never sees those credentials.</div>
+          <div><strong style="color: var(--text-color);">Your engines, your logins:</strong> The agents run on your PC under your own Claude Code, Gemini CLI or Codex CLI sign-in. Remogent never sees those credentials.</div>
         </div>
       </div>
     </div>
@@ -392,7 +392,7 @@ npm run setup</code>
         <div class="card" style="padding: 1.75rem;">
           <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Does Remogent send my code to the cloud?</h4>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
-            Remogent itself does not. The phone connects directly to your PC. Of course, the agent you run (Claude Code or Gemini CLI) talks to its own provider exactly as it does in your terminal.
+            Remogent itself does not. The phone connects directly to your PC. Of course, the agent you run (Claude Code, Gemini CLI or Codex CLI) talks to its own provider exactly as it does in your terminal.
           </p>
         </div>
 

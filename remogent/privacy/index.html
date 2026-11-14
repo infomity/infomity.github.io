@@ -422,7 +422,7 @@
         <div class="meta-tags">
           <span class="meta-tag"><strong>Package:</strong> io.github.infomity.remogent</span>
           <span class="meta-tag"><strong>Publisher:</strong> Infomity</span>
-          <span class="meta-tag"><strong>Effective Date:</strong> November 14, 2026</span>
+          <span class="meta-tag"><strong>Effective Date:</strong> November 15, 2026</span>
           <span class="meta-tag"><strong>Target API:</strong> Android 8.0+ (API 26+)</span>
         </div>
       </header>
@@ -435,7 +435,7 @@
           Executive Summary: We Collect No Data
         </h3>
         <p style="margin-bottom: 0.5rem; font-size: 0.92rem; color: var(--text-color);">
-          Remogent is a remote control for the <strong>Gemini CLI</strong> and <strong>Claude Code</strong> tools that run on <em>your own computer</em>. There is no Remogent cloud: the developer runs no servers, has no user accounts and receives nothing from your device.
+          Remogent is a remote control for the <strong>Claude Code</strong>, <strong>Gemini CLI</strong> and <strong>Codex CLI</strong> tools that run on <em>your own computer</em>. There is no Remogent cloud: the developer runs no servers, has no user accounts and receives nothing from your device.
         </p>
         <div class="summary-grid">
           <div class="summary-item">
@@ -496,7 +496,7 @@
       <ul>
         <li><strong>Direct connection only:</strong> the app opens a WebSocket over TLS directly to the host address in your pairing QR code. Depending on your own setup this is your local Wi-Fi, a USB reverse tunnel, or a private network or tunnel you control (for example Tailscale or a Cloudflare tunnel). Infomity is not in that path. The host may also announce its name on your local network using mDNS to make pairing easier.</li>
         <li><strong>Authentication:</strong> the connection is accepted only with the random access token from your pairing, and the app refuses any host whose certificate fingerprint does not match the one you scanned.</li>
-        <li><strong>Third-party AI providers:</strong> the Remogent Host launches the <strong>Gemini CLI</strong> or <strong>Claude Code</strong> program that you installed and signed into on your computer, and passes your prompts to it. Those tools send your content to their providers (Google and Anthropic respectively) under <em>your</em> account and <em>their</em> privacy policies and terms. Remogent does not receive, proxy or store that traffic, and does not have access to your provider credentials.</li>
+        <li><strong>Third-party AI providers:</strong> the Remogent Host launches the <strong>Claude Code</strong>, <strong>Gemini CLI</strong> or <strong>Codex CLI</strong> program that you installed and signed into on your computer, and passes your prompts to it. Those tools send your content to their providers (Anthropic, Google and OpenAI respectively) under <em>your</em> account and <em>their</em> privacy policies and terms. Remogent does not receive, proxy or store that traffic, and does not have access to your provider credentials.</li>
       </ul>
 
       <h2>5. Device Permissions Declaration</h2>

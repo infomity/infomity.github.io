@@ -6,12 +6,12 @@ Data safety disclosure for the Remogent Android application and its Remogent Hos
 
 Package: io.github.infomity.remogent
 Publisher: Infomity
-Effective Date: November 14, 2026
+Effective Date: November 15, 2026
 Target API: Android 8.0+ (API 26+)
 
 Executive Summary: We Collect No Data
 
-Remogent is a remote control for the Gemini CLI and Claude Code tools that run on your own computer. There is no Remogent cloud: the developer runs no servers, has no user accounts and receives nothing from your device.
+Remogent is a remote control for the Claude Code, Gemini CLI and Codex CLI tools that run on your own computer. There is no Remogent cloud: the developer runs no servers, has no user accounts and receives nothing from your device.
 
 🚫 No Developer Servers
 The app talks only to the computer you paired it with. There is no relay, backend or sign-in operated by Infomity.
@@ -71,7 +71,7 @@ None of this is transmitted to Infomity. Because chat transcripts may contain co
 
 - Authentication: the connection is accepted only with the random access token from your pairing, and the app refuses any host whose certificate fingerprint does not match the one you scanned.
 
-- Third-party AI providers: the Remogent Host launches the Gemini CLI or Claude Code program that you installed and signed into on your computer, and passes your prompts to it. Those tools send your content to their providers (Google and Anthropic respectively) under your account and their privacy policies and terms. Remogent does not receive, proxy or store that traffic, and does not have access to your provider credentials.
+- Third-party AI providers: the Remogent Host launches the Claude Code, Gemini CLI or Codex CLI program that you installed and signed into on your computer, and passes your prompts to it. Those tools send your content to their providers (Anthropic, Google and OpenAI respectively) under your account and their privacy policies and terms. Remogent does not receive, proxy or store that traffic, and does not have access to your provider credentials.
 
 5. Device Permissions Declaration
 
