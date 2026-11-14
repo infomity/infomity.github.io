@@ -236,9 +236,13 @@
 
         <!-- Bento 2 (4-col): Pinned TLS -->
         <div class="card bento-col-4">
-          <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.3); display: flex; align-items: center; justify-content: center; color: #22d3ee; font-size: 1.25rem; margin-bottom: 1.25rem;">&#128274;</div>
-          <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">Pinned TLS + Token</h3>
-          <span style="font-size: 0.8rem; color: #22d3ee; font-family: var(--font-mono); display: block; margin-bottom: 1rem;">QR-BOOTSTRAPPED TRUST</span>
+          <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.25rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.3); display: flex; align-items: center; justify-content: center; color: #22d3ee; font-size: 1.25rem; flex-shrink: 0;">&#128274;</div>
+            <div>
+              <h3 style="margin: 0 0 0.2rem 0; font-size: 1.2rem;">Pinned TLS + Token</h3>
+              <span style="font-size: 0.8rem; color: #22d3ee; font-family: var(--font-mono); display: block;">QR-BOOTSTRAPPED TRUST</span>
+            </div>
+          </div>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
             The QR carries the host's SHA-256 certificate fingerprint and a random bearer token. The app refuses any other certificate, and unauthenticated requests never reach the session layer.
           </p>
@@ -246,9 +250,13 @@
 
         <!-- Bento 3 (4-col): Away from home -->
         <div class="card bento-col-4">
-          <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); display: flex; align-items: center; justify-content: center; color: #818cf8; font-size: 1.25rem; margin-bottom: 1.25rem;">&#127760;</div>
-          <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">Home Wi-Fi, Then Tailscale</h3>
-          <span style="font-size: 0.8rem; color: #818cf8; font-family: var(--font-mono); display: block; margin-bottom: 1rem;">MULTI-ADDRESS FALLBACK</span>
+          <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.25rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); display: flex; align-items: center; justify-content: center; color: #818cf8; font-size: 1.25rem; flex-shrink: 0;">&#127760;</div>
+            <div>
+              <h3 style="margin: 0 0 0.2rem 0; font-size: 1.2rem;">Home Wi-Fi, Then Tailscale</h3>
+              <span style="font-size: 0.8rem; color: #818cf8; font-family: var(--font-mono); display: block;">MULTI-ADDRESS FALLBACK</span>
+            </div>
+          </div>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
             The pairing code can carry backup addresses. The app tries your LAN address first and falls back to the PC's Tailscale address on mobile data by itself, using Tailscale's free plan instead of a paid relay.
           </p>
@@ -256,9 +264,13 @@
 
         <!-- Bento 4 (4-col): Sessions -->
         <div class="card bento-col-4">
-          <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); display: flex; align-items: center; justify-content: center; color: #c084fc; font-size: 1.25rem; margin-bottom: 1.25rem;">&#128260;</div>
-          <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">Chats That Survive</h3>
-          <span style="font-size: 0.8rem; color: #c084fc; font-family: var(--font-mono); display: block; margin-bottom: 1rem;">GAP-FREE RESYNC &amp; RESUME</span>
+          <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.25rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); display: flex; align-items: center; justify-content: center; color: #c084fc; font-size: 1.25rem; flex-shrink: 0;">&#128260;</div>
+            <div>
+              <h3 style="margin: 0 0 0.2rem 0; font-size: 1.2rem;">Chats That Survive</h3>
+              <span style="font-size: 0.8rem; color: #c084fc; font-family: var(--font-mono); display: block;">GAP-FREE RESYNC &amp; RESUME</span>
+            </div>
+          </div>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
             Reconnect and the transcript replays exactly where you left off. Transcripts are saved on your PC, and Claude Code chats resume with their context after a host restart.
           </p>
@@ -266,9 +278,13 @@
 
         <!-- Bento 5 (4-col): Keystore -->
         <div class="card bento-col-4">
-          <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); display: flex; align-items: center; justify-content: center; color: #fbbf24; font-size: 1.25rem; margin-bottom: 1.25rem;">&#128737;&#65039;</div>
-          <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">Keystore-Backed Secrets</h3>
-          <span style="font-size: 0.8rem; color: #fbbf24; font-family: var(--font-mono); display: block; margin-bottom: 1rem;">ANDROID KEYSTORE &middot; AES-256-GCM</span>
+          <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.25rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); display: flex; align-items: center; justify-content: center; color: #fbbf24; font-size: 1.25rem; flex-shrink: 0;">&#128737;&#65039;</div>
+            <div>
+              <h3 style="margin: 0 0 0.2rem 0; font-size: 1.2rem;">Keystore-Backed Secrets</h3>
+              <span style="font-size: 0.8rem; color: #fbbf24; font-family: var(--font-mono); display: block;">ANDROID KEYSTORE &middot; AES-256-GCM</span>
+            </div>
+          </div>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
             Host tokens and fingerprints are encrypted on the phone with a hardware-backed master key via Jetpack Security.
           </p>
@@ -276,9 +292,13 @@
 
         <!-- Bento 6 (full width): Zero setup -->
         <div class="card bento-col-12">
-          <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(236, 72, 153, 0.15); border: 1px solid rgba(236, 72, 153, 0.3); display: flex; align-items: center; justify-content: center; color: #f472b6; font-size: 1.25rem; margin-bottom: 1.25rem;">&#9881;&#65039;</div>
-          <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">One-Command Host</h3>
-          <span style="font-size: 0.8rem; color: #f472b6; font-family: var(--font-mono); display: block; margin-bottom: 1rem;">AUTOSTART &middot; DOCTOR</span>
+          <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.25rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(236, 72, 153, 0.15); border: 1px solid rgba(236, 72, 153, 0.3); display: flex; align-items: center; justify-content: center; color: #f472b6; font-size: 1.25rem; flex-shrink: 0;">&#9881;&#65039;</div>
+            <div>
+              <h3 style="margin: 0 0 0.2rem 0; font-size: 1.2rem;">One-Command Host</h3>
+              <span style="font-size: 0.8rem; color: #f472b6; font-family: var(--font-mono); display: block;">AUTOSTART &middot; DOCTOR</span>
+            </div>
+          </div>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
             <code>npm run setup</code> builds the host, checks your machine, finds your CLIs without PATH editing, and starts it at every sign-in. It is simply there after pairing.
           </p>
