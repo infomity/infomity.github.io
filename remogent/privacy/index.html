@@ -186,14 +186,13 @@
       z-index: 1;
     }
 
+    /* Plain content wrapper (no outer card) so text uses the full page width */
     .doc-card {
-      background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 3.5rem 3rem;
-      box-shadow: var(--shadow);
+      background: none;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
     }
 
     .doc-header {
@@ -355,8 +354,9 @@
         align-items: flex-start;
         gap: 1rem;
       }
-      .doc-card {
-        padding: 2rem 1.5rem;
+      .doc-container {
+        padding: 0 1rem;
+        margin: 1.5rem auto 3.5rem auto;
       }
       h1 {
         font-size: 1.85rem;
