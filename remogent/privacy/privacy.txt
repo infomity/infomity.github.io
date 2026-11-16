@@ -6,15 +6,15 @@ Data safety disclosure for the Remogent Android application and its Remogent Hos
 
 Package: io.github.infomity.remogent
 Publisher: Infomity
-Effective Date: November 15, 2026
+Effective Date: November 16, 2026
 Target API: Android 8.0+ (API 26+)
 
 Executive Summary: We Collect No Data
 
-Remogent is a remote control for the Claude Code, Gemini CLI and Codex CLI tools that run on your own computer. There is no Remogent cloud: the developer runs no servers, has no user accounts and receives nothing from your device.
+Remogent is a remote control for the Claude Code, Gemini CLI and Codex CLI tools that run on your own computer. There is no Remogent cloud: the developer runs no user accounts, has no tracking backends and receives no personal data from your device.
 
-🚫 No Developer Servers
-The app talks only to the computer you paired it with. There is no relay, backend or sign-in operated by Infomity.
+🚫 Direct Connection & Stateless Relay
+The app connects directly to the computer you paired it with. When optional push notifications are enabled, content-free wake-up pings pass through a stateless push relay to Google Firebase Cloud Messaging.
 
 🔒 Pinned, Encrypted Link
 Every connection uses TLS pinned to the SHA-256 fingerprint from your pairing QR code, plus a private access token.
@@ -49,7 +49,7 @@ On your phone (private app storage, removed when you uninstall the app):
 
 - Host profiles: for each computer you pair, its display name, network address and port, its access token and its TLS certificate fingerprint. These are held in EncryptedSharedPreferences, protected by an AES-256-GCM key in the Android Keystore.
 
-- App settings: for example your light or dark theme choice.
+- App settings: for example your light or dark theme choice, and notification preferences.
 
 - Chat content in memory only. Conversations you see in the app are held in memory while the app is open and are not written to a database or file on the phone.
 
@@ -60,6 +60,8 @@ On your computer (kept by the Remogent Host, entirely under your control):
 - Host identity: a self-signed certificate and access token, created when you first run the host.
 
 - Chat history: a local transcript store (~/.remogent/sessions.json) so chats can be listed and resumed after a restart. The file is restricted to your user account and is limited to roughly 100 chats, 14 days and about 2 MiB per chat. It can be disabled with the --no-persist option.
+
+- Push notification registry: when you turn on "Notify me" in the app, your phone's FCM device token is registered with your host in ~/.remogent/push.json so it can ping your device when an approval or finished turn occurs while the app is closed. Tokens are pruned automatically when notifications are disabled or invalidated.
 
 - Log file: when the autostart service is used, a local log such as ~/.remogent/daemon.log.
 
@@ -75,15 +77,25 @@ None of this is transmitted to Infomity. Because chat transcripts may contain co
 
 5. Device Permissions Declaration
 
-- android.permission.INTERNET — required to connect to the computer you paired (local network or private tunnel).
+- android.permission.INTERNET — required to connect to the computer you paired (local network or private tunnel) and to receive push notifications.
 
 - android.permission.ACCESS_NETWORK_STATE — used to notice when the network is lost or restored so the app can show its connection status and reconnect.
 
 - android.permission.USE_BIOMETRIC — lets the app ask Android to show the system fingerprint or face prompt before you approve sensitive actions. Android performs the check; the app only learns whether it succeeded and never receives your biometric data.
 
+- android.permission.POST_NOTIFICATIONS — requested on Android 13+ (API 33+) when you enable "Notify me" in Settings, allowing the app to show alert banners when an agent needs approval or completes a turn.
+
+- android.permission.FOREGROUND_SERVICE and android.permission.FOREGROUND_SERVICE_REMOTE_MESSAGING — used exclusively when you turn on "Stay connected" in Settings to keep the WebSocket connection open in the background so live events can be received without delay. A persistent notification is shown while this service runs.
+
 No camera permission: the app does not request CAMERA. QR codes are read by Google's code scanner (section 6), which runs in Google Play services and returns only the decoded text to the app.
 
-6. Third-Party Components
+6. Third-Party Components and Services
+
+- Push Notifications (Google Firebase Cloud Messaging & Stateless Relay): When you turn on "Notify me" in Settings, the app uses Firebase Cloud Messaging (FCM) to wake your device when an approval is required or a turn finishes while the app is closed.
+  * Opt-in only: Notifications default to off. Firebase auto-initialization is disabled in the app manifest until you explicitly enable "Notify me".
+  * Content-free data messages: Wake-up pings dispatched through the project's stateless push relay (remogent-push.remogent.workers.dev) and Google FCM contain only the event kind ("approval" or "turn") and an opaque session ID. No prompts, chats, code, file paths, model responses, or user identifiers are ever sent to Google or the relay.
+  * Token lifecycle: An FCM registration token is issued by Google and stored on your PC host. When you turn "Notify me" off, the token is deleted from your device via deleteToken() and unregistered from your host.
+  * FCM is operated by Google under Google's Privacy Policy (policies.google.com/privacy).
 
 - Google code scanner (Google Play services / ML Kit): used for the "Scan QR" button. Scanning happens on your device inside Google Play services, and the app receives only the text of the code. Google may process technical data about the scanner module under its own privacy policy (policies.google.com/privacy (https://policies.google.com/privacy)); Infomity does not receive it.
 
@@ -127,9 +139,11 @@ Data-protection laws give people rights to access, correct, delete or port their
 
 - Data shared with third parties by the developer: none.
 
-- Data encrypted in transit: yes (TLS with certificate pinning).
+- Device or other identifiers (FCM device token): handled strictly when "Notify me" is opted in by the user for App Functionality (delivering generic approval/turn alerts). Content-free; contains no user messages or personal data. Encrypted in transit (HTTPS/TLS). Deleted upon unregistering or app uninstall.
 
-- Data deletion: uninstalling the app removes everything stored on the phone; no data exists on developer servers.
+- Data encrypted in transit: yes (TLS with certificate pinning; HTTPS to FCM/relay).
+
+- Data deletion: uninstalling the app or disabling notifications deletes all local and remote tokens; no data exists on developer servers.
 
 - Advertising, analytics and tracking: none.
 

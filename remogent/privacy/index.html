@@ -422,7 +422,7 @@
         <div class="meta-tags">
           <span class="meta-tag"><strong>Package:</strong> io.github.infomity.remogent</span>
           <span class="meta-tag"><strong>Publisher:</strong> Infomity</span>
-          <span class="meta-tag"><strong>Effective Date:</strong> November 15, 2026</span>
+          <span class="meta-tag"><strong>Effective Date:</strong> November 16, 2026</span>
           <span class="meta-tag"><strong>Target API:</strong> Android 8.0+ (API 26+)</span>
         </div>
       </header>
@@ -435,12 +435,12 @@
           Executive Summary: We Collect No Data
         </h3>
         <p style="margin-bottom: 0.5rem; font-size: 0.92rem; color: var(--text-color);">
-          Remogent is a remote control for the <strong>Claude Code</strong>, <strong>Gemini CLI</strong> and <strong>Codex CLI</strong> tools that run on <em>your own computer</em>. There is no Remogent cloud: the developer runs no servers, has no user accounts and receives nothing from your device.
+          Remogent is a remote control for the <strong>Claude Code</strong>, <strong>Gemini CLI</strong> and <strong>Codex CLI</strong> tools that run on <em>your own computer</em>. There is no Remogent cloud: the developer runs no user accounts, has no tracking backends and receives no personal data from your device.
         </p>
         <div class="summary-grid">
           <div class="summary-item">
-            <strong>🚫 No Developer Servers</strong>
-            The app talks only to the computer you paired it with. There is no relay, backend or sign-in operated by Infomity.
+            <strong>🚫 Direct Connection &amp; Stateless Relay</strong>
+            The app connects directly to the computer you paired it with. When optional push notifications are enabled, content-free wake-up pings pass through a stateless push relay to Google Firebase Cloud Messaging.
           </div>
           <div class="summary-item">
             <strong>🔒 Pinned, Encrypted Link</strong>
@@ -478,7 +478,7 @@
       <p><strong>On your phone</strong> (private app storage, removed when you uninstall the app):</p>
       <ul>
         <li><strong>Host profiles:</strong> for each computer you pair, its display name, network address and port, its access token and its TLS certificate fingerprint. These are held in <code>EncryptedSharedPreferences</code>, protected by an AES-256-GCM key in the Android Keystore.</li>
-        <li><strong>App settings:</strong> for example your light or dark theme choice.</li>
+        <li><strong>App settings:</strong> for example your light or dark theme choice, and notification preferences.</li>
         <li><strong>Chat content in memory only.</strong> Conversations you see in the app are held in memory while the app is open and are not written to a database or file on the phone.</li>
         <li>The app copies something to the clipboard only when you tap a copy button (for example the certificate fingerprint or a code block).</li>
       </ul>
@@ -486,6 +486,7 @@
       <ul>
         <li><strong>Host identity:</strong> a self-signed certificate and access token, created when you first run the host.</li>
         <li><strong>Chat history:</strong> a local transcript store (<code>~/.remogent/sessions.json</code>) so chats can be listed and resumed after a restart. The file is restricted to your user account and is limited to roughly 100 chats, 14 days and about 2 MiB per chat. It can be disabled with the <code>--no-persist</code> option.</li>
+        <li><strong>Push notification registry:</strong> when you turn on "Notify me" in the app, your phone's FCM device token is registered with your host in <code>~/.remogent/push.json</code> so it can ping your device when an approval or finished turn occurs while the app is closed. Tokens are pruned automatically when notifications are disabled or invalidated.</li>
         <li><strong>Log file:</strong> when the autostart service is used, a local log such as <code>~/.remogent/daemon.log</code>.</li>
       </ul>
       <p>
@@ -501,16 +502,26 @@
 
       <h2>5. Device Permissions Declaration</h2>
       <ul>
-        <li><code>android.permission.INTERNET</code> — required to connect to the computer you paired (local network or private tunnel).</li>
+        <li><code>android.permission.INTERNET</code> — required to connect to the computer you paired (local network or private tunnel) and to receive push notifications.</li>
         <li><code>android.permission.ACCESS_NETWORK_STATE</code> — used to notice when the network is lost or restored so the app can show its connection status and reconnect.</li>
         <li><code>android.permission.USE_BIOMETRIC</code> — lets the app ask Android to show the system fingerprint or face prompt before you approve sensitive actions. Android performs the check; the app only learns whether it succeeded and never receives your biometric data.</li>
+        <li><code>android.permission.POST_NOTIFICATIONS</code> — requested on Android 13+ (API 33+) when you enable "Notify me" in Settings, allowing the app to show alert banners when an agent needs approval or completes a turn.</li>
+        <li><code>android.permission.FOREGROUND_SERVICE</code> and <code>android.permission.FOREGROUND_SERVICE_REMOTE_MESSAGING</code> — used exclusively when you turn on "Stay connected" in Settings to keep the WebSocket connection open in the background so live events can be received without delay. A persistent notification is shown while this service runs.</li>
       </ul>
       <p>
         <strong>No camera permission:</strong> the app does not request <code>CAMERA</code>. QR codes are read by Google's code scanner (section 6), which runs in Google Play services and returns only the decoded text to the app.
       </p>
 
-      <h2>6. Third-Party Components</h2>
+      <h2>6. Third-Party Components and Services</h2>
       <ul>
+        <li><strong>Push Notifications (Google Firebase Cloud Messaging &amp; Stateless Relay):</strong> When you turn on "Notify me" in Settings, the app uses Firebase Cloud Messaging (FCM) to wake your device when an approval is required or a turn finishes while the app is closed.
+          <ul>
+            <li><strong>Opt-in only:</strong> Notifications default to off. Firebase auto-initialization is disabled in the app manifest until you explicitly enable "Notify me".</li>
+            <li><strong>Content-free data messages:</strong> Wake-up pings dispatched through the project's stateless push relay (<code>remogent-push.remogent.workers.dev</code>) and Google FCM contain only the event kind ("approval" or "turn") and an opaque session ID. No prompts, chats, code, file paths, model responses, or user identifiers are ever sent to Google or the relay.</li>
+            <li><strong>Token lifecycle:</strong> An FCM registration token is issued by Google and stored on your PC host. When you turn "Notify me" off, the token is deleted from your device via <code>deleteToken()</code> and unregistered from your host.</li>
+            <li>FCM is operated by Google under Google's Privacy Policy (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>).</li>
+          </ul>
+        </li>
         <li><strong>Google code scanner (Google Play services / ML Kit):</strong> used for the "Scan QR" button. Scanning happens on your device inside Google Play services, and the app receives only the text of the code. Google may process technical data about the scanner module under its own privacy policy (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>); Infomity does not receive it.</li>
         <li><strong>Patreon link:</strong> the "Support on Patreon" button simply opens <code>patreon.com/Infomity</code> in your browser. The app sends nothing to Patreon; once the page opens, Patreon's own policy applies.</li>
         <li><strong>Open-source libraries:</strong> the app uses standard libraries (for example Jetpack Compose, OkHttp, AndroidX Security and Biometric, and kotlinx.serialization). None of them is an advertising, analytics or tracking SDK.</li>
@@ -549,8 +560,9 @@
       <ul>
         <li><strong>Data collected by the developer:</strong> none.</li>
         <li><strong>Data shared with third parties by the developer:</strong> none.</li>
-        <li><strong>Data encrypted in transit:</strong> yes (TLS with certificate pinning).</li>
-        <li><strong>Data deletion:</strong> uninstalling the app removes everything stored on the phone; no data exists on developer servers.</li>
+        <li><strong>Device or other identifiers (FCM device token):</strong> handled strictly when "Notify me" is opted in by the user for App Functionality (delivering generic approval/turn alerts). Content-free; contains no user messages or personal data. Encrypted in transit (HTTPS/TLS). Deleted upon unregistering or app uninstall.</li>
+        <li><strong>Data encrypted in transit:</strong> yes (TLS with certificate pinning; HTTPS to FCM/relay).</li>
+        <li><strong>Data deletion:</strong> uninstalling the app or disabling notifications deletes all local and remote tokens; no data exists on developer servers.</li>
         <li><strong>Advertising, analytics and tracking:</strong> none.</li>
         <li><strong>Independent security review:</strong> not performed. The source code is public for anyone to review.</li>
       </ul>
