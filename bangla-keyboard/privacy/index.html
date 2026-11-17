@@ -499,13 +499,14 @@
         <li><strong>Other Items Kept On Your Device:</strong> Your settings (number row, Bangla digits, key vibration, key sound, key preview, next-word suggestions, double space, keyboard theme and key height), your last language mode, and your recently used emoji (up to 24). All of it stays in private app storage, is removed when you uninstall the app, and cloud backup of app data is disabled.</li>
       </ul>
 
-      <h2>4. Sensitive Field Protection (Passwords &amp; PINs)</h2>
+      <h2>4. Sensitive Field Protection (Passwords, PINs &amp; Phone Fields)</h2>
       <p>
         Bangla Keyboard inspects Android's <code>EditorInfo</code> flags passed by the calling application:
       </p>
       <ul>
         <li>When an input field is marked as <code>TYPE_TEXT_VARIATION_PASSWORD</code>, <code>TYPE_TEXT_VARIATION_VISIBLE_PASSWORD</code>, or <code>TYPE_NUMBER_VARIATION_PASSWORD</code>, the keyboard immediately switches to standard numeric/QWERTY mode.</li>
         <li>Suggestion caching and custom dictionary recording are completely disabled during password entry.</li>
+        <li><strong>Phone Number Fields (<code>TYPE_CLASS_PHONE</code>):</strong> When you tap a telephone dial or phone input field, Android reports this field type so the keyboard can present the appropriate telephone keypad grid (*, #, +, digits). The application processes keystrokes strictly on-device in volatile RAM (ephemeral processing for app functionality) and never reads, stores, or transmits phone numbers.</li>
       </ul>
 
       <h2>5. Third-Party Services and SDKs</h2>
