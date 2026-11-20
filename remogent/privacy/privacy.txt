@@ -27,7 +27,7 @@ Pairing secrets are stored encrypted with a key held in the Android Keystore. Cl
 
 1. Scope and Who We Are
 
-This policy covers (a) the Remogent Android app and (b) the Remogent Host background program you install on your own Windows, macOS or Linux computer so the app can reach it. Remogent is free and open source and is published by Infomity (lead developer: Md. Sazzad Hissain Khan). Contact details are in section 13.
+This policy covers (a) the Remogent Android app and (b) the Remogent Host background program you install on your own Windows, macOS or Linux computer so the app can reach it. Remogent is published by Infomity (lead developer: Md. Sazzad Hissain Khan). Contact details are in section 13.
 
 2. Information We Do Not Collect
 
@@ -147,7 +147,7 @@ Data-protection laws give people rights to access, correct, delete or port their
 
 - Advertising, analytics and tracking: none.
 
-- Independent security review: not performed. The source code is public for anyone to review.
+- Independent security review: not performed.
 
 12. Policy Updates
 
