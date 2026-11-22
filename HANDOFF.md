@@ -20,6 +20,7 @@
 - None. Website update completed and verified for both apps.
 
 ## Important Decisions & Constraints
+- **Alignment & Visual Harmony**: All pages (`index.html`, `bangla-keyboard/index.html`, `remogent/index.html`) follow 1:1 centered hero layouts (`max-width: 860px; margin: 2rem auto; text-align: center;`), centered status pills, centered CTAs, and centered section headers (`max-width: 680px; margin: 0 auto 3rem auto;`).
 - **Direct Play Store Links**: Both showcase pages (`bangla-keyboard/index.html` and `remogent/index.html`) feature direct "Get it on Google Play" glow buttons with official SVG play icons pointing to verified app package IDs.
 - **Cross-App Navigation**: Unified top navbar and footer links cross-reference between Home, Apps Catalog, Bangla Keyboard, and Remogent across all pages.
 - **Compliance & Store URLs**: Both product pages serve as the official Play Console Support / App Website URLs and contain direct links to their dedicated, compliant privacy policies.
