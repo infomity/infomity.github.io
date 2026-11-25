@@ -732,6 +732,10 @@ h3 {
   margin-top: 0.55rem;
 }
 
+.feature-card-desc {
+  text-align: center;
+}
+
 @media (max-width: 900px) {
   .bento-grid > * {
     grid-column: span 12 !important;
