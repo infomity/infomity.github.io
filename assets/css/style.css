@@ -770,7 +770,7 @@ h3 {
   border: 1px solid var(--card-border);
   border-radius: 14px;
   padding: 1.5rem;
-  text-align: left;
+  text-align: center;
   box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;

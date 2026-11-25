@@ -408,16 +408,16 @@
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
 
-        <div class="card" style="padding: 1.75rem;">
+        <div class="card" style="padding: 1.75rem; text-align: center;">
           <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-color); font-family: var(--font-mono); margin-bottom: 0.75rem;">01</div>
           <h4 style="margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--text-color);">Set Up the PC Host</h4>
           <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0 0 0.75rem 0; line-height: 1.6;">
             On the PC (Node.js 20 or newer), run one command. It checks your setup, installs the host, starts it and registers it to start at every sign-in, running as you. It ends by showing the pairing QR code.
           </p>
-          <code style="display: block; font-size: 0.82rem; padding: 0.5rem 0.75rem; border-radius: 8px; background: rgba(0, 0, 0, 0.3); overflow-x: auto; white-space: pre;">npx @infomity/remogent@latest setup</code>
+          <code style="display: block; font-size: 0.82rem; padding: 0.5rem 0.75rem; border-radius: 8px; background: rgba(0, 0, 0, 0.3); overflow-x: auto; white-space: pre; text-align: left;">npx @infomity/remogent@latest setup</code>
         </div>
 
-        <div class="card" style="padding: 1.75rem;">
+        <div class="card" style="padding: 1.75rem; text-align: center;">
           <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-color); font-family: var(--font-mono); margin-bottom: 0.75rem;">02</div>
           <h4 style="margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--text-color);">Install App &amp; Pair with QR</h4>
           <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0; line-height: 1.6;">
@@ -425,7 +425,7 @@
           </p>
         </div>
 
-        <div class="card" style="padding: 1.75rem;">
+        <div class="card" style="padding: 1.75rem; text-align: center;">
           <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-color); font-family: var(--font-mono); margin-bottom: 0.75rem;">03</div>
           <h4 style="margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--text-color);">Start a Chat</h4>
           <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0; line-height: 1.6;">
@@ -460,7 +460,7 @@
           </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1.5rem; border-top: 1px solid var(--card-border); padding-top: 1.5rem; font-size: 0.88rem; color: var(--text-secondary);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1.5rem; border-top: 1px solid var(--card-border); padding-top: 1.5rem; font-size: 0.88rem; color: var(--text-secondary); text-align: center;">
           <div><strong style="color: var(--text-color);">Direct only:</strong> Your prompts and code go from phone to your own PC. There is no Infomity cloud or relay in the path.</div>
           <div><strong style="color: var(--text-color);">No analytics SDKs:</strong> No Firebase, ad or tracking libraries, and no accounts.</div>
           <div><strong style="color: var(--text-color);">Your engines, your logins:</strong> The agents run on your PC under your own Claude Code, Gemini CLI, Antigravity CLI or Codex CLI sign-in. Remogent never sees those credentials.</div>
@@ -477,49 +477,49 @@
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
 
-        <div class="card" style="padding: 1.75rem;">
+        <div class="card" style="padding: 1.75rem; text-align: center;">
           <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Does Remogent send my code to the cloud?</h4>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
             Remogent itself does not. The phone connects directly to your PC. Of course, the agent you run (Claude Code, Gemini CLI, Antigravity CLI or Codex CLI) talks to its own provider exactly as it does in your terminal.
           </p>
         </div>
 
-        <div class="card" style="padding: 1.75rem;">
+        <div class="card" style="padding: 1.75rem; text-align: center;">
           <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">What does it cost?</h4>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
             Nothing recurring. Remogent is free to use. Tailscale's free personal plan is optional if you want access away from home. Support the studio on <a href="https://www.patreon.com/Infomity" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color);">Patreon</a> if it helps you.
           </p>
         </div>
 
-        <div class="card" style="padding: 1.75rem;">
+        <div class="card" style="padding: 1.75rem; text-align: center;">
           <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Which computers can host it?</h4>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
             Windows is the tested host. macOS (launchd) and Linux (systemd) autostart backends are included but have had less real-world testing, so expect rough edges there.
           </p>
         </div>
 
-        <div class="card" style="padding: 1.75rem;">
+        <div class="card" style="padding: 1.75rem; text-align: center;">
           <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Is my PC exposed to the internet?</h4>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
             The host listens on your network, and every connection needs the pairing token and the pinned certificate. Do not forward its port on your router; use Tailscale for access away from home. Rotate the secret any time with <code>install --rotate</code>.
           </p>
         </div>
 
-        <div class="card" style="padding: 1.75rem;">
+        <div class="card" style="padding: 1.75rem; text-align: center;">
           <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Where do I download the Android app?</h4>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
             Install Remogent directly from <a href="https://play.google.com/store/apps/details?id=io.github.infomity.remogent" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color);">Google Play</a> (package <code>io.github.infomity.remogent</code>). Once installed, run <code>npx @infomity/remogent@latest setup</code> on your computer to start the host daemon and display the pairing QR code.
           </p>
         </div>
 
-        <div class="card" style="padding: 1.75rem;">
+        <div class="card" style="padding: 1.75rem; text-align: center;">
           <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Can this page be used as the App Support URL on Google Play Console?</h4>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
             Yes. This URL (<code>https://infomity.github.io/remogent/</code>) satisfies Google Play requirements for the <strong>App Website &amp; Support URL</strong>, corresponding to package <code>io.github.infomity.remogent</code>, and links directly to our standalone <strong>Privacy Policy</strong>.
           </p>
         </div>
 
-        <div class="card" style="padding: 1.75rem;">
+        <div class="card" style="padding: 1.75rem; text-align: center;">
           <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Where do I report bugs or ask for features?</h4>
           <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">
             Email us at <code>infomity.inc@gmail.com</code> or reach out on the <a href="https://github.com/infomity" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color);">Infomity GitHub</a>.
