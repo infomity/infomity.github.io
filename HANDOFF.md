@@ -10,14 +10,14 @@
   - Play Store URL: `https://play.google.com/store/apps/details?id=com.infomity.banglakeyboard`
   - Showcase: `https://infomity.github.io/bangla-keyboard/`
   - Privacy Policy: `https://infomity.github.io/bangla-keyboard/privacy/`
-- **Remogent**: Live on Google Play (`io.github.infomity.remogent`, v0.1.69+).
+- **Remogent**: Live on Google Play (`io.github.infomity.remogent`, v0.1.70 Production; v0.1.91+ in Play Store review / Internal Testing, Companion `0.2.26`).
   - Play Store URL: `https://play.google.com/store/apps/details?id=io.github.infomity.remogent`
   - Showcase: `https://infomity.github.io/remogent/`
   - Privacy Policy: `https://infomity.github.io/remogent/privacy/`
 - **Deployment State**: GitHub Pages automated deployment triggered on push to `origin/main`.
 
 ## In-Flight / Active Tasks
-- None. Website update completed and verified for both apps.
+- None. Website updated with `v0.1.70` live status, Antigravity CLI (`agy`) support, and the `#coming-soon` section for `v0.1.71–v0.1.91+` & Companion `0.2.26` features in Play Store review.
 
 ## Important Decisions & Constraints
 - **Alignment & Visual Harmony**: All pages (`index.html`, `bangla-keyboard/index.html`, `remogent/index.html`) follow 1:1 centered hero layouts (`max-width: 860px; margin: 2rem auto; text-align: center;`), centered status pills, centered CTAs, and centered section headers (`max-width: 680px; margin: 0 auto 3rem auto;`).
