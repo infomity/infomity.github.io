@@ -1225,8 +1225,10 @@ body.sim-fullscreen-active {
 
 .app-header-block {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.85rem;
+  text-align: center;
+  gap: 0.75rem;
   min-height: 52px;
   margin-bottom: 1rem;
 }
@@ -1278,12 +1280,14 @@ body.sim-fullscreen-active {
   margin-bottom: 1.25rem;
   flex-grow: 1;
   min-height: 5.75em;
+  text-align: center;
 }
 
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
   min-height: 32px;
   margin-top: auto;
