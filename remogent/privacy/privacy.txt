@@ -6,12 +6,12 @@ Data safety disclosure for the Remogent Android application and its Remogent Hos
 
 Package: io.github.infomity.remogent
 Publisher: Infomity
-Effective Date: November 16, 2026
+Effective Date: November 26, 2026
 Target API: Android 8.0+ (API 26+)
 
 Executive Summary: We Collect No Data
 
-Remogent is a remote control for the Claude Code, Gemini CLI and Codex CLI tools that run on your own computer. There is no Remogent cloud: the developer runs no user accounts, has no tracking backends and receives no personal data from your device.
+Remogent is a remote control for the Claude Code, Gemini CLI, Antigravity CLI and Codex CLI tools that run on your own computer. There is no Remogent cloud: the developer runs no user accounts, has no tracking backends and receives no personal data from your device.
 
 🚫 Direct Connection & Stateless Relay
 The app connects directly to the computer you paired it with. When optional push notifications are enabled, content-free wake-up pings pass through a stateless push relay to Google Firebase Cloud Messaging.
@@ -49,9 +49,11 @@ On your phone (private app storage, removed when you uninstall the app):
 
 - Host profiles: for each computer you pair, its display name, network address and port, its access token and its TLS certificate fingerprint. These are held in EncryptedSharedPreferences, protected by an AES-256-GCM key in the Android Keystore.
 
-- App settings: for example your light or dark theme choice, and notification preferences.
+- App settings & presets: for example your light or dark theme choice, notification preferences, saved prompt templates and per-project presets (stored in EncryptedSharedPreferences).
 
 - Chat content in memory only. Conversations you see in the app are held in memory while the app is open and are not written to a database or file on the phone.
+
+- Attachments & share target: photos from the system camera use a private FileProvider cache file (granted per shot); selected documents, screenshots, or items shared into Remogent via Android Share (ACTION_SEND / ACTION_SEND_MULTIPLE) are sent directly to your paired PC host and are never uploaded elsewhere.
 
 - The app copies something to the clipboard only when you tap a copy button (for example the certificate fingerprint or a code block).
 
@@ -59,11 +61,13 @@ On your computer (kept by the Remogent Host, entirely under your control):
 
 - Host identity: a self-signed certificate and access token, created when you first run the host.
 
-- Chat history: a local transcript store (~/.remogent/sessions.json) so chats can be listed and resumed after a restart. The file is restricted to your user account and is limited to roughly 100 chats, 14 days and about 2 MiB per chat. It can be disabled with the --no-persist option.
+- Chat history: a per-session local transcript store (~/.remogent/sessions/, migrated from ~/.remogent/sessions.json) so chats can be listed and resumed after a restart. Files are restricted to your user account and capped at up to 500 chats, 30 days and 8 MiB per chat. Persistence can be disabled with --no-persist. When you trigger "Import PC sessions", the host reads local Claude Code, Codex CLI or Antigravity CLI transcripts on your computer and saves imported copies into ~/.remogent/sessions/.
+
+- Permission rules & attachments: allow/deny tool rules in ~/.remogent/rules.json and phone-sent images/documents in ~/.remogent/attachments/.
 
 - Push notification registry: when you turn on "Notify me" in the app, your phone's FCM device token is registered with your host in ~/.remogent/push.json so it can ping your device when an approval or finished turn occurs while the app is closed. Tokens are pruned automatically when notifications are disabled or invalidated.
 
-- Log file: when the autostart service is used, a local log such as ~/.remogent/daemon.log.
+- Log file: when the autostart service is used, a local log such as ~/.remogent/daemon.log (with tokens redacted when viewed in Host Diagnostics).
 
 None of this is transmitted to Infomity. Because chat transcripts may contain code or other sensitive material you worked on, treat the folder ~/.remogent like any other private data on your computer.
 
@@ -71,9 +75,11 @@ None of this is transmitted to Infomity. Because chat transcripts may contain co
 
 - Direct connection only: the app opens a WebSocket over TLS directly to the host address in your pairing QR code. Depending on your own setup this is your local Wi-Fi, a USB reverse tunnel, or a private network or tunnel you control (for example Tailscale or a Cloudflare tunnel). Infomity is not in that path. The host may also announce its name on your local network using mDNS to make pairing easier.
 
+- Local dev server preview & update checks: when you open Dev Preview, the host proxies localhost web servers on your PC (/proxy/:port/*) directly to the app over the same pinned TLS connection. When you open Host Diagnostics, the host optionally checks registry.npmjs.org on demand to see if a newer companion package version is published.
+
 - Authentication: the connection is accepted only with the random access token from your pairing, and the app refuses any host whose certificate fingerprint does not match the one you scanned.
 
-- Third-party AI providers: the Remogent Host launches the Claude Code, Gemini CLI or Codex CLI program that you installed and signed into on your computer, and passes your prompts to it. Those tools send your content to their providers (Anthropic, Google and OpenAI respectively) under your account and their privacy policies and terms. Remogent does not receive, proxy or store that traffic, and does not have access to your provider credentials.
+- Third-party AI providers: the Remogent Host launches the Claude Code, Gemini CLI, Antigravity CLI or Codex CLI program that you installed and signed into on your computer, and passes your prompts to it. Those tools send your content to their providers (Anthropic, Google and OpenAI respectively) under your account and their privacy policies and terms. Remogent does not receive, proxy or store that traffic, and does not have access to your provider credentials.
 
 5. Device Permissions Declaration
 
@@ -86,6 +92,12 @@ None of this is transmitted to Infomity. Because chat transcripts may contain co
 - android.permission.POST_NOTIFICATIONS — requested on Android 13+ (API 33+) when you enable "Notify me" in Settings, allowing the app to show alert banners when an agent needs approval or completes a turn.
 
 - android.permission.FOREGROUND_SERVICE and android.permission.FOREGROUND_SERVICE_REMOTE_MESSAGING — used exclusively when you turn on "Stay connected" in Settings to keep the WebSocket connection open in the background so live events can be received without delay. A persistent notification is shown while this service runs.
+
+- android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION — used exclusively while capturing an optional phone screenshot attachment (ScreenCaptureService) after your explicit confirmation; the screenshot is sent only to your paired PC host.
+
+- android.permission.RECORD_AUDIO — requested only when you tap the microphone button for voice dictation in the composer; audio is processed by Android's on-device/system speech recognizer to fill the text box and is never recorded or sent to Infomity.
+
+- android.permission.VIBRATE — used for tactile haptic feedback on dictation and approval interactions.
 
 No camera permission: the app does not request CAMERA. QR codes are read by Google's code scanner (section 6), which runs in Google Play services and returns only the decoded text to the app.
 
@@ -121,7 +133,7 @@ Infomity holds no copy of your data, so there is nothing for us to delete. You c
 
 - Phone: remove a paired computer under Settings -> Host profiles, or uninstall the app to erase all of its stored data.
 
-- Chats: use Delete chat in the app to remove a chat from the host's history. Deleting ~/.remogent/sessions.json clears all history.
+- Chats: use Delete chat in the app to remove a chat from the host's history. Deleting ~/.remogent/sessions/ (and any legacy sessions.json) clears all history.
 
 - Computer: run node dist/index.js uninstall in the companion folder to remove the autostart service, and delete the ~/.remogent folder to remove the identity, history and logs.
 
