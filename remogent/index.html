@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20261126c">
 
   <script>
     // Enforce dark obsidian theme by default unless explicitly toggled to light
@@ -182,65 +182,37 @@
       <div style="text-align: center; max-width: 680px; margin: 0 auto 2.25rem auto;">
         <h2 style="font-size: 2.2rem; margin-bottom: 0.65rem;">See Remogent in Action</h2>
         <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.6; margin: 0;">
-          Real screens from the Android app &mdash; swipe to browse and tap any screen to enlarge.
+          Click or swipe any screen to inspect it full-size.
         </p>
       </div>
 
       <div class="screenshot-showcase-shell">
-        <button type="button" class="screenshot-nav-btn screenshot-nav-prev" aria-label="Previous screenshots" onclick="scrollScreenshots(-1)">&#8592;</button>
-        <div class="screenshot-track" id="screenshotTrack" role="region" aria-label="Remogent app screenshots">
-          <button type="button" class="screenshot-card" data-index="0">
-            <div class="screenshot-bezel"><img src="./screenshots/01-new-chat.png" alt="Remogent New Chat screen with quick starters and host status" loading="lazy"></div>
-            <div class="screenshot-title">New Chat &amp; Starters</div>
-            <div class="screenshot-caption">Start from presets, recent folders, or one-tap prompts.</div>
+        <div class="screenshot-track" id="screenshotTrack" role="region" aria-label="Remogent Play Store screenshots">
+          <button type="button" class="screenshot-card" data-title="Your PC's AI coding agents, in your pocket" data-caption="Claude Code, Gemini, Antigravity &amp; Codex">
+            <div class="screenshot-bezel"><img src="./screenshots/01-new-chat.png" alt="Your PC's AI coding agents, in your pocket — Claude Code, Gemini, Antigravity &amp; Codex" loading="lazy"></div>
           </button>
-          <button type="button" class="screenshot-card" data-index="1">
-            <div class="screenshot-bezel"><img src="./screenshots/04-approval.png" alt="Remogent Interactive Tool Approval sheet with unified diff preview" loading="lazy"></div>
-            <div class="screenshot-title">Diff-Backed Approvals</div>
-            <div class="screenshot-caption">Inspect file edits before tapping Allow once, For session, or Deny.</div>
+          <button type="button" class="screenshot-card" data-title="Watch every step, live" data-caption="Thinking, tool runs and replies stream to your phone">
+            <div class="screenshot-bezel"><img src="./screenshots/02-live-chat.png" alt="Watch every step, live — Thinking, tool runs and replies stream to your phone" loading="lazy"></div>
           </button>
-          <button type="button" class="screenshot-card" data-index="2">
-            <div class="screenshot-bezel"><img src="./screenshots/03-chat.png" alt="Remogent live agent chat running Antigravity CLI" loading="lazy"></div>
-            <div class="screenshot-title">Live Agent Chat</div>
-            <div class="screenshot-caption">Watch tool executions and clean Markdown replies stream live.</div>
+          <button type="button" class="screenshot-card" data-title="Approve risky actions from anywhere" data-caption="Review the diff, then allow or deny">
+            <div class="screenshot-bezel"><img src="./screenshots/03-approvals.png" alt="Approve risky actions from anywhere — Review the diff, then allow or deny" loading="lazy"></div>
           </button>
-          <button type="button" class="screenshot-card" data-index="3">
-            <div class="screenshot-bezel"><img src="./screenshots/05-agents.png" alt="Remogent agent picker showing Claude Code, Gemini CLI, Antigravity CLI, and Codex CLI" loading="lazy"></div>
-            <div class="screenshot-title">4 Terminal Engines</div>
-            <div class="screenshot-caption">Claude Code, Gemini CLI, Antigravity CLI &amp; Codex CLI in one app.</div>
+          <button type="button" class="screenshot-card" data-title="Pick the agent you trust" data-caption="Four coding agents, one app">
+            <div class="screenshot-bezel"><img src="./screenshots/04-agents.png" alt="Pick the agent you trust — Four coding agents, one app" loading="lazy"></div>
           </button>
-          <button type="button" class="screenshot-card" data-index="4">
-            <div class="screenshot-bezel"><img src="./screenshots/06-models.png" alt="Remogent model switcher with Gemini, Claude, and GPT-OSS models" loading="lazy"></div>
-            <div class="screenshot-title">Models &amp; Effort</div>
-            <div class="screenshot-caption">Switch models and reasoning effort between turns.</div>
+          <button type="button" class="screenshot-card" data-title="You set the safety level" data-caption="From ask-every-time to full auto">
+            <div class="screenshot-bezel"><img src="./screenshots/05-permissions.png" alt="You set the safety level — From ask-every-time to full auto" loading="lazy"></div>
           </button>
-          <button type="button" class="screenshot-card" data-index="5">
-            <div class="screenshot-bezel"><img src="./screenshots/07-permissions.png" alt="Remogent permission modes: Ask, Auto-edit, Plan first, Full auto" loading="lazy"></div>
-            <div class="screenshot-title">Permission Modes</div>
-            <div class="screenshot-caption">Choose Ask, Auto-edit, Plan first, or guarded Full auto.</div>
+          <button type="button" class="screenshot-card" data-title="Resume any session" data-caption="Chats survive host restarts">
+            <div class="screenshot-bezel"><img src="./screenshots/06-sessions.png" alt="Resume any session — Chats survive host restarts" loading="lazy"></div>
           </button>
-          <button type="button" class="screenshot-card" data-index="6">
-            <div class="screenshot-bezel"><img src="./screenshots/02-sessions.png" alt="Remogent sessions drawer with multi-engine chats and PC terminal" loading="lazy"></div>
-            <div class="screenshot-title">Chats &amp; Host Drawer</div>
-            <div class="screenshot-caption">Jump between sessions, open a PC terminal, or pair via QR.</div>
+          <button type="button" class="screenshot-card" data-title="Any project folder" data-caption="Jump back into recent projects">
+            <div class="screenshot-bezel"><img src="./screenshots/07-folders.png" alt="Any project folder — Jump back into recent projects" loading="lazy"></div>
           </button>
-          <button type="button" class="screenshot-card" data-index="7">
-            <div class="screenshot-bezel"><img src="./screenshots/09-folder.png" alt="Remogent working folder selector on paired PC" loading="lazy"></div>
-            <div class="screenshot-title">Working Folders</div>
-            <div class="screenshot-caption">Pick any project directory or recent workspace on your PC.</div>
-          </button>
-          <button type="button" class="screenshot-card" data-index="8">
-            <div class="screenshot-bezel"><img src="./screenshots/08-settings.png" alt="Remogent Settings with Light, Dark, and System theme modes" loading="lazy"></div>
-            <div class="screenshot-title">Themes &amp; Host Status</div>
-            <div class="screenshot-caption">Obsidian dark/light themes, text sizing &amp; CLI engine checks.</div>
-          </button>
-          <button type="button" class="screenshot-card" data-index="9">
-            <div class="screenshot-bezel"><img src="./screenshots/10-onboarding.png" alt="Remogent onboarding showing 3-step setup command" loading="lazy"></div>
-            <div class="screenshot-title">One-Command Setup</div>
-            <div class="screenshot-caption">Copy the setup command, scan the QR, and start chatting.</div>
+          <button type="button" class="screenshot-card" data-title="Set up in one command" data-caption="Scan a QR code to pair. No account needed.">
+            <div class="screenshot-bezel"><img src="./screenshots/00-setup.png" alt="Set up in one command — Scan a QR code to pair. No account needed." loading="lazy"></div>
           </button>
         </div>
-        <button type="button" class="screenshot-nav-btn screenshot-nav-next" aria-label="Next screenshots" onclick="scrollScreenshots(1)">&#8594;</button>
       </div>
     </section>
 
@@ -721,14 +693,7 @@
       }, 5000);
     }
 
-    // Screenshot carousel & lightbox
-    function scrollScreenshots(dir) {
-      const track = document.getElementById('screenshotTrack');
-      if (!track) return;
-      const step = Math.max(240, Math.round(track.clientWidth * 0.75));
-      track.scrollBy({ left: dir * step, behavior: 'smooth' });
-    }
-
+    // Screenshot lightbox
     (function() {
       const cards = Array.from(document.querySelectorAll('#screenshotTrack .screenshot-card'));
       const box = document.getElementById('screenshotLightbox');
@@ -749,8 +714,8 @@
         const cardImg = card.querySelector('img');
         img.src = cardImg ? cardImg.src : '';
         img.alt = cardImg ? cardImg.alt : '';
-        titleEl.textContent = card.querySelector('.screenshot-title')?.textContent || '';
-        capEl.textContent = card.querySelector('.screenshot-caption')?.textContent || '';
+        titleEl.textContent = card.dataset.title || '';
+        capEl.textContent = card.dataset.caption || '';
         box.classList.add('is-open');
         document.body.style.overflow = 'hidden';
       }
