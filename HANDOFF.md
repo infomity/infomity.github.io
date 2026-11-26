@@ -10,7 +10,7 @@
   - Play Store URL: `https://play.google.com/store/apps/details?id=com.infomity.banglakeyboard`
   - Showcase: `https://infomity.github.io/bangla-keyboard/`
   - Privacy Policy: `https://infomity.github.io/bangla-keyboard/privacy/`
-- **Remogent**: Live on Google Play (`io.github.infomity.remogent`, v0.1.70 Production; v0.1.91+ in Play Store review / Internal Testing, Companion `0.2.26`).
+- **Remogent**: Live on Google Play (`io.github.infomity.remogent`, v0.1.70 Production; v0.1.95 in Play Store Production review / Internal Testing, Companion `0.2.29`).
   - Play Store URL: `https://play.google.com/store/apps/details?id=io.github.infomity.remogent`
   - Showcase: `https://infomity.github.io/remogent/`
   - Privacy Policy: `https://infomity.github.io/remogent/privacy/`
