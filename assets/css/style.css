@@ -1650,3 +1650,226 @@ footer a {
 footer a:hover {
   color: var(--accent-color);
 }
+
+/* ==========================================================================
+   Remogent Screenshot Carousel & Lightbox
+   ========================================================================== */
+.screenshot-showcase-shell {
+  position: relative;
+}
+
+.screenshot-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0.25rem 1rem 0.25rem;
+  scrollbar-width: none;
+}
+
+.screenshot-track::-webkit-scrollbar {
+  display: none;
+}
+
+.screenshot-card {
+  flex: 0 0 228px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.screenshot-bezel {
+  width: 100%;
+  border-radius: 24px;
+  padding: 7px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 18px 38px -14px rgba(0, 0, 0, 0.65);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+[data-theme="light"] .screenshot-bezel {
+  background: #0f172a;
+  border-color: rgba(15, 23, 42, 0.25);
+  box-shadow: 0 18px 35px -12px rgba(15, 23, 42, 0.28);
+}
+
+.screenshot-card:hover .screenshot-bezel,
+.screenshot-card:focus-visible .screenshot-bezel {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+  box-shadow: 0 22px 44px -14px rgba(16, 185, 129, 0.28);
+}
+
+.screenshot-card:focus-visible {
+  outline: none;
+}
+
+.screenshot-bezel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 19.5;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 18px;
+  background: #07090e;
+}
+
+.screenshot-title {
+  margin-top: 0.75rem;
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.3;
+}
+
+.screenshot-caption {
+  margin-top: 0.22rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  max-width: 215px;
+}
+
+.screenshot-nav-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--navbar-border);
+  background: var(--navbar-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.screenshot-nav-btn:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.screenshot-nav-prev { left: -14px; }
+.screenshot-nav-next { right: -14px; }
+
+.screenshot-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 6, 10, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.25rem;
+  z-index: 2000;
+}
+
+.screenshot-lightbox.is-open {
+  display: flex;
+}
+
+.screenshot-lightbox-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.screenshot-lightbox-img {
+  max-height: 76vh;
+  max-width: min(86vw, 380px);
+  width: auto;
+  height: auto;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.75);
+}
+
+.screenshot-lightbox-meta {
+  margin-top: 0.9rem;
+  text-align: center;
+  max-width: 420px;
+}
+
+.screenshot-lightbox-close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(15, 20, 31, 0.85);
+  color: #f8fafc;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screenshot-lightbox-step {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(15, 20, 31, 0.85);
+  color: #f8fafc;
+  font-size: 1.15rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .screenshot-track {
+    gap: 0.9rem;
+    padding: 0.25rem 0.5rem 0.75rem 0.5rem;
+  }
+
+  .screenshot-card {
+    flex: 0 0 min(70vw, 236px);
+    scroll-snap-align: center;
+  }
+
+  .screenshot-nav-btn {
+    display: none;
+  }
+
+  .screenshot-lightbox-step {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+
+  .screenshot-lightbox-img {
+    max-width: 70vw;
+    max-height: 70vh;
+  }
+}
